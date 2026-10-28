@@ -1,4 +1,4 @@
-defmodule OsteoTest.Validator do
+defmodule Osteoporosis.Validator do
   @moduledoc false
 
   def validate(pathway) do

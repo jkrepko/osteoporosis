@@ -1,5 +1,5 @@
-defmodule OsteoTest.Domain.Signals.SignalsMP do
-  import OsteoTest.DSL
+defmodule Osteoporosis.Domain.Signals.SignalsMP do
+  import Osteoporosis.DSL
 
   defmacro signals_m_p do
 	quote do

@@ -1,23 +1,23 @@
-defmodule OsteoTest do
+defmodule Osteoporosis do
   @moduledoc false
-  # alias OsteoTest.Domain.Pathway
+  # alias Osteoporosis.Domain.Pathway
   
   def name, do: :osteoporosis
   
   # def pathway do
   #   %Pathway{
   #     name: name(),
-  #     signals: OsteoTest.Signals.all(),
-  #     mechanisms: OsteoTest.Mechanisms.all(),
-  #     interventions: OsteoTest.Interventions.all(),
-  #     indicated_agents: OsteoTest.IndicatedAgents.all(),
-  #     regimens: OsteoTest.Regimens.all(),
-  #     conditions: OsteoTest.Conditions.all()
+  #     signals: Osteoporosis.Signals.all(),
+  #     mechanisms: Osteoporosis.Mechanisms.all(),
+  #     interventions: Osteoporosis.Interventions.all(),
+  #     indicated_agents: Osteoporosis.IndicatedAgents.all(),
+  #     regimens: Osteoporosis.Regimens.all(),
+  #     conditions: Osteoporosis.Conditions.all()
   #   }
   # end
   
   def pathway do
-    OsteoTest.Domain.pathway()
+    Osteoporosis.Domain.pathway()
   end
   
 end

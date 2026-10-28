@@ -1,4 +1,4 @@
-defmodule OsteoTest.Fact do
+defmodule Osteoporosis.Fact do
 @moduledoc false
 
 defstruct [:subject, :relation, :object, :provenance]
@@ -15,13 +15,13 @@ end
 
 defp derive_directional_facts(subject, object, :inhibits) do
 [
-%OsteoTest.Fact{
+%Osteoporosis.Fact{
 	subject: subject,
 	relation: :inhibits,
 	object: object,
 	provenance: :derived
 },
-%OsteoTest.Fact{
+%Osteoporosis.Fact{
 	subject: object,
 	relation: :inhibited_by,
 	object: subject,
@@ -32,13 +32,13 @@ end
 
 defp derive_directional_facts(subject, object, :enhances) do
 [
-%OsteoTest.Fact{
+%Osteoporosis.Fact{
 	subject: subject,
 	relation: :enhances,
 	object: object,
 	provenance: :derived
 },
-%OsteoTest.Fact{
+%Osteoporosis.Fact{
 	subject: object,
 	relation: :enhanced_by,
 	object: subject,
@@ -48,7 +48,7 @@ defp derive_directional_facts(subject, object, :enhances) do
 end
 
 
-def derive(%OsteoTest.Fact{
+def derive(%Osteoporosis.Fact{
 	subject: subject,
 	relation: relation,
 	object: {object, opts},
@@ -65,7 +65,7 @@ nil ->
 
 # derived_relation ->
 #   [
-#     %OsteoTest.Fact{
+#     %Osteoporosis.Fact{
 #       subject: subject,
 #       relation: derived_relation,
 #       object: object,

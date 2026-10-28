@@ -1,6 +1,6 @@
-defmodule OsteoTest.Regimens do
-use OsteoTest.Collection, attribute: :regimens
-import OsteoTest.DSL
+defmodule Osteoporosis.Regimens do
+use Osteoporosis.Collection, attribute: :regimens
+import Osteoporosis.DSL
 
   @moduledoc false
 

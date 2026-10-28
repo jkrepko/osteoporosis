@@ -1,4 +1,4 @@
-  defmodule OsteoTest.Graph do
+  defmodule Osteoporosis.Graph do
   @moduledoc false
 
  	defstruct facts: [],
@@ -10,7 +10,7 @@
 def from_pathway(pathway) do
 	facts =
 	pathway
-	|> OsteoTest.Entities.all_entities()
+	|> Osteoporosis.Entities.all_entities()
 	|> Enum.flat_map(&facts_for_entity/1)
 
 	%__MODULE__{
@@ -32,7 +32,7 @@ def from_pathway_with_derivations(pathway) do
 
 	derived_facts =
 	graph.facts
-	|> Enum.flat_map(&OsteoTest.Fact.derive/1)
+	|> Enum.flat_map(&Osteoporosis.Fact.derive/1)
 
 	%{graph | facts: filtered_facts ++ derived_facts}
 end
@@ -411,15 +411,15 @@ end
 
 
 defp facts_for_entity(entity) do
-	subject = OsteoTest.Entity.id(entity)
+	subject = Osteoporosis.Entity.id(entity)
 
 	entity
-	|> OsteoTest.Entity.relations()
+	|> Osteoporosis.Entity.relations()
 	|> Enum.flat_map(fn {relation, objects} ->
 	objects
 	|> List.wrap()
 	|> Enum.map(fn object ->
-		%OsteoTest.Fact{
+		%Osteoporosis.Fact{
 		subject: subject,
 		relation: relation,
 		object: object,

@@ -1,4 +1,4 @@
-defmodule OsteoTest.Aliases do
+defmodule Osteoporosis.Aliases do
   @moduledoc """
   Canonical vocabulary and terminology mappings.
   """

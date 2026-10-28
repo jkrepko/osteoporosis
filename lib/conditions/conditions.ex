@@ -1,7 +1,7 @@
-defmodule OsteoTest.Conditions do
+defmodule Osteoporosis.Conditions do
   @moduledoc false
-  use OsteoTest.Collection, attribute: :conditions
-  import OsteoTest.DSL
+  use Osteoporosis.Collection, attribute: :conditions
+  import Osteoporosis.DSL
 
 	condition :sample_condition do
 	  description "..."

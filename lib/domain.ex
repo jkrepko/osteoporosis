@@ -1,15 +1,15 @@
-defmodule OsteoTest.Domain do
-  alias OsteoTest.Domain.Pathway
+defmodule Osteoporosis.Domain do
+  alias Osteoporosis.Domain.Pathway
 
   def pathway do
     Pathway.new(
       name: :osteoporosis,
-      signals: OsteoTest.Domain.Signals.all(),
-      mechanisms: OsteoTest.Domain.Mechanisms.all()
-      # interventions: OsteoTest.Domain.Interventions.all(),
-      # indicated_agents: OsteoTest.Domain.IndicatedAgents.all(),
-      # regimens: OsteoTest.Domain.Regimens.all(),
-      # conditions: OsteoTest.Domain.Conditions.all()
+      signals: Osteoporosis.Domain.Signals.all(),
+      mechanisms: Osteoporosis.Domain.Mechanisms.all()
+      # interventions: Osteoporosis.Domain.Interventions.all(),
+      # indicated_agents: Osteoporosis.Domain.IndicatedAgents.all(),
+      # regimens: Osteoporosis.Domain.Regimens.all(),
+      # conditions: Osteoporosis.Domain.Conditions.all()
     )
   end
 end

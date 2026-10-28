@@ -1,7 +1,7 @@
-defmodule OsteoTest.Demo.HtmlRenderer do
+defmodule Osteoporosis.Demo.HtmlRenderer do
   @moduledoc false
 
-  alias OsteoTest.Demo.TextRenderer
+  alias Osteoporosis.Demo.TextRenderer
 
   def render(demos) do
 	body =
@@ -15,7 +15,7 @@ defmodule OsteoTest.Demo.HtmlRenderer do
 	<html>
 	  <head>
 		<meta charset="utf-8">
-		<title>OsteoTest Demo</title>
+		<title>Osteoporosis Demo</title>
 		<style>
 		  body {
 			font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -36,7 +36,7 @@ defmodule OsteoTest.Demo.HtmlRenderer do
 		</style>
 	  </head>
 	  <body>
-		<h1>OsteoTest Demo</h1>
+		<h1>Osteoporosis Demo</h1>
 		<p>
 		  Toward solving problems in the domains where we find them,
 		  and in the language of that domain.

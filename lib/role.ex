@@ -1,4 +1,4 @@
-  defmodule OsteoTest.Domain.Role do
+  defmodule Osteoporosis.Domain.Role do
     @moduledoc false
     @roles [:protective, :pathogenic, :double_edged]
 

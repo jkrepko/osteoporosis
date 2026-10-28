@@ -1,4 +1,4 @@
-defmodule OsteoTest.Domain.Pathway do
+defmodule Osteoporosis.Domain.Pathway do
   defstruct [
     :name,
     conditions: [],

@@ -1,8 +1,8 @@
-  defmodule OsteoTest.DSL do
+  defmodule Osteoporosis.DSL do
    @moduledoc false
   defmacro __using__(_opts) do
 	  quote do
-		import OsteoTest.DSL
+		import Osteoporosis.DSL
   
 		Module.register_attribute(__MODULE__, :signals, accumulate: true)
 		Module.register_attribute(__MODULE__, :mechanisms, accumulate: true)
@@ -11,7 +11,7 @@
 		Module.register_attribute(__MODULE__, :conditions, accumulate: true)
 		Module.register_attribute(__MODULE__, :indicated_agents, accumulate: true)
   
-		@before_compile OsteoTest.DSL
+		@before_compile Osteoporosis.DSL
 	  end
 	end
 	
@@ -32,7 +32,7 @@
 	
 		unquote(block)
 	
-		@signals %OsteoTest.Domain.Signal{
+		@signals %Osteoporosis.Domain.Signal{
 		  name: unquote(name),
 		  description: Module.get_attribute(__MODULE__, :description),
 		  signal_type: Module.get_attribute(__MODULE__, :signal_type),
@@ -60,18 +60,18 @@
 	
 		unquote(block)
 	
-		@mechanisms %OsteoTest.Domain.Mechanism{
+		@mechanisms %Osteoporosis.Domain.Mechanism{
 		  name: unquote(name),
 		  role: Module.get_attribute(__MODULE__, :role),
 		  family: Module.get_attribute(__MODULE__, :family),
 		  description: Module.get_attribute(__MODULE__, :description),
-		  consumes: OsteoTest.DSL.normalize_items(var!(consumes)),
-		  produces: OsteoTest.DSL.normalize_items(var!(produces)),
-		  explains: OsteoTest.DSL.normalize_items(var!(explains)),
-		  enhances: OsteoTest.DSL.normalize_items(var!(enhances)),
-		  enhanced_by: OsteoTest.DSL.normalize_items(var!(enhanced_by)),
-		  inhibits: OsteoTest.DSL.normalize_items(var!(inhibits)),
-		  inhibited_by: OsteoTest.DSL.normalize_items(var!(inhibited_by))
+		  consumes: Osteoporosis.DSL.normalize_items(var!(consumes)),
+		  produces: Osteoporosis.DSL.normalize_items(var!(produces)),
+		  explains: Osteoporosis.DSL.normalize_items(var!(explains)),
+		  enhances: Osteoporosis.DSL.normalize_items(var!(enhances)),
+		  enhanced_by: Osteoporosis.DSL.normalize_items(var!(enhanced_by)),
+		  inhibits: Osteoporosis.DSL.normalize_items(var!(inhibits)),
+		  inhibited_by: Osteoporosis.DSL.normalize_items(var!(inhibited_by))
 		}
 	  end
 	end
@@ -90,7 +90,7 @@
 		Module.put_attribute(__MODULE__, :intended_effects, [])
 	  unquote(block)
 	
-		indicated_agent = %OsteoTest.Domain.IndicatedAgent{
+		indicated_agent = %Osteoporosis.Domain.IndicatedAgent{
 			name: unquote(name),
 			description:          Module.get_attribute(__MODULE__, :description),
 			category:             Module.get_attribute(__MODULE__, :category),
@@ -113,7 +113,7 @@
 		Module.put_attribute(__MODULE__, :interventions, [])
 		unquote(block)
 	
-		condition = %OsteoTest.Domain.Condition{
+		condition = %Osteoporosis.Domain.Condition{
 		  name: unquote(name),
 		  description: Module.get_attribute(__MODULE__, :description),
 		  mechanisms: Module.get_attribute(__MODULE__, :mechanisms),
@@ -126,12 +126,12 @@
   
 	# defmacro risk(name, opts \\ []) do
 	#   quote do
-	# 	@risks %OsteoTest.Domain.Risk{
+	# 	@risks %Osteoporosis.Domain.Risk{
 	# 	  name: unquote(name),
 	# 	  description: Keyword.get(unquote(opts), :description),
-	# 	  increased_by: OsteoTest.DSL.normalize_items(Keyword.get(unquote(opts), :increased_by, [])),
-	# 	  decreased_by: OsteoTest.DSL.normalize_items(Keyword.get(unquote(opts), :decreased_by, [])),
-	# 	  related_effects: OsteoTest.DSL.normalize_items(Keyword.get(unquote(opts), :related_effects, [])),
+	# 	  increased_by: Osteoporosis.DSL.normalize_items(Keyword.get(unquote(opts), :increased_by, [])),
+	# 	  decreased_by: Osteoporosis.DSL.normalize_items(Keyword.get(unquote(opts), :decreased_by, [])),
+	# 	  related_effects: Osteoporosis.DSL.normalize_items(Keyword.get(unquote(opts), :related_effects, [])),
 	# 	  confidence: Keyword.get(unquote(opts), :confidence, :unknown)
 	# 	}
 	#   end
@@ -145,17 +145,17 @@ defmacro intervention(name, do: block) do
 	   
 		   unquote(block)
 	   
-		   @interventions %OsteoTest.Domain.Intervention{
+		   @interventions %Osteoporosis.Domain.Intervention{
 			 name: unquote(name),
 			 description: Module.get_attribute(__MODULE__, :description),
 	   
 			 effects:
-			   OsteoTest.DSL.normalize_items(
+			   Osteoporosis.DSL.normalize_items(
 				 Module.get_attribute(__MODULE__, :effects)
 			   ),
 	   
 			 indicated_agents:
-			   OsteoTest.DSL.normalize_items(
+			   Osteoporosis.DSL.normalize_items(
 				 Module.get_attribute(__MODULE__, :indicated_agents)
 			   )
 		   }
@@ -168,7 +168,7 @@ defmacro intervention(name, do: block) do
 		  Module.put_attribute(__MODULE__, :intended_effects, [])
 		unquote(block)
 		  
-		regimen = %OsteoTest.Domain.Regimen{
+		regimen = %Osteoporosis.Domain.Regimen{
 		  name: unquote(name),
 		  description: Module.get_attribute(__MODULE__, :description),
 		  interventions: Module.get_attribute(__MODULE__, :interventions),
@@ -223,7 +223,7 @@ defmacro intervention(name, do: block) do
 	
 	
 	defmacro role(value) do
-	  unless OsteoTest.Domain.Role.valid?(value) do
+	  unless Osteoporosis.Domain.Role.valid?(value) do
 		raise ArgumentError,
 			  "invalid mechanism role: #{inspect(value)}"
 	  end
@@ -257,7 +257,7 @@ defmacro intervention(name, do: block) do
 		Module.put_attribute(
 		  __MODULE__,
 		  :indicates,
-		  OsteoTest.DSL.normalize_items(unquote(value))
+		  Osteoporosis.DSL.normalize_items(unquote(value))
 		)
 	  end
 	end
@@ -275,7 +275,7 @@ defmacro intervention(name, do: block) do
 		Module.put_attribute(
 		  __MODULE__,
 		  :metadata,
-		  OsteoTest.DSL.normalize_items(unquote(value))
+		  Osteoporosis.DSL.normalize_items(unquote(value))
 		)
 	  end
 	end

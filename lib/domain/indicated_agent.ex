@@ -1,4 +1,4 @@
-defmodule OsteoTest.Domain.IndicatedAgent do
+defmodule Osteoporosis.Domain.IndicatedAgent do
   defstruct [
 	:name,
 	:brand_name,
@@ -11,7 +11,7 @@ defmodule OsteoTest.Domain.IndicatedAgent do
     intended_effects: []
   ]
   
-  defimpl OsteoTest.Entity, for: OsteoTest.Domain.IndicatedAgent do
+  defimpl Osteoporosis.Entity, for: Osteoporosis.Domain.IndicatedAgent do
 	def id(indicated_agent), do: indicated_agent.name
 	def kind(_), do: :indicated_agent
   

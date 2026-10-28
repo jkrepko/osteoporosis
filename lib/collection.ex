@@ -1,4 +1,4 @@
-defmodule OsteoTest.Collection do
+defmodule Osteoporosis.Collection do
   @moduledoc false
 
   defmacro __using__(opts) do
@@ -11,7 +11,7 @@ defmodule OsteoTest.Collection do
 		accumulate: true
 	  )
 
-	  @before_compile OsteoTest.Collection
+	  @before_compile Osteoporosis.Collection
 	  @collection_attribute unquote(attribute)
 	end
   end

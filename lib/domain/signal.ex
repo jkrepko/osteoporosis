@@ -1,4 +1,4 @@
-defmodule OsteoTest.Domain.Signal do
+defmodule Osteoporosis.Domain.Signal do
   @moduledoc false
   
 defstruct [
@@ -9,7 +9,7 @@ defstruct [
 	metadata: %{}
   ]
 
-	defimpl OsteoTest.Entity, for: OsteoTest.Domain.Signal do
+	defimpl Osteoporosis.Entity, for: Osteoporosis.Domain.Signal do
 	  def id(signal), do: signal.name
 	  def kind(_), do: :signal
 

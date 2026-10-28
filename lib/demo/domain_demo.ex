@@ -1,12 +1,12 @@
-defmodule OsteoTest.Demo.OsteoTestDemo do
+defmodule Osteoporosis.Demo.OsteoporosisDemo do
   @moduledoc false
 
-  alias OsteoTest
-  import OsteoTest.Graph
+  alias Osteoporosis
+  import Osteoporosis.Graph
 
   def describe(pathway_module) do
 	pathway = pathway_module.pathway()
-	# graph = OsteoTest.Graph.from_pathway(pathway) 
+	# graph = Osteoporosis.Graph.from_pathway(pathway) 
 
 	%{
 	  module: pathway_module,
@@ -30,17 +30,17 @@ defmodule OsteoTest.Demo.OsteoTestDemo do
 
 defp run_new_fn_queries(pathway) do
 	p = pathway
-	g = OsteoTest.Graph.from_pathway(p)
+	g = Osteoporosis.Graph.from_pathway(p)
 	indicated_agents = p.interventions |> Enum.flat_map(& &1.indicated_agents) |> Enum.uniq()
 	facts = g.facts
 	filtered_facts = Enum.reject(facts, fn fact -> fact.relation in [:indicates, :effects] end)
-	# derived_facts = g.facts |> Enum.flat_map(&OsteoTest.Fact.derive/1)
+	# derived_facts = g.facts |> Enum.flat_map(&Osteoporosis.Fact.derive/1)
 	
 	# derived_facts =
 	#   g.facts
 	#   |> Enum.flat_map(fn fact ->
 	# 	try do
-	# 	  OsteoTest.Fact.derive(fact)
+	# 	  Osteoporosis.Fact.derive(fact)
 	# 	rescue
 	# 	  error ->
 	# 		IO.inspect(fact, label: "OFFENDING FACT")
@@ -53,7 +53,7 @@ defp run_new_fn_queries(pathway) do
 	  |> Enum.with_index()
 	  |> Enum.flat_map(fn {fact, index} ->
 		try do
-		  OsteoTest.Fact.derive(fact)
+		  Osteoporosis.Fact.derive(fact)
 		rescue
 		  error ->
 			IO.puts("FAILED AT FACT INDEX #{index}")

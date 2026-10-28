@@ -1,17 +1,17 @@
-alias OsteoTest.Demo.OsteoTestDemo
-alias OsteoTest.Demo.BasicPathway
-alias OsteoTest.Demo.TextRenderer
-alias OsteoTest.Demo.HtmlRenderer
+alias Osteoporosis.Demo.OsteoporosisDemo
+alias Osteoporosis.Demo.BasicPathway
+alias Osteoporosis.Demo.TextRenderer
+alias Osteoporosis.Demo.HtmlRenderer
 
 pathways = BasicPathway.modules()
 
-# demos = Enum.map(pathways, &OsteoTestDemo.describe_fn/1)
+# demos = Enum.map(pathways, &OsteoporosisDemo.describe_fn/1)
 
 html? = "--html" in System.argv()
 
 output =
 pathways
-|> Enum.map(&OsteoTestDemo.describe_fn/1)
+|> Enum.map(&OsteoporosisDemo.describe_fn/1)
 |> then(fn demos ->
   if html? do
 	HtmlRenderer.render(demos)

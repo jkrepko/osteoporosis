@@ -1,4 +1,4 @@
-defmodule OsteoTest.Domain.Mechanism do
+defmodule Osteoporosis.Domain.Mechanism do
   @moduledoc false
   
 defstruct [
@@ -16,7 +16,7 @@ defstruct [
 	# confidence: :unknown
   ]
 
-defimpl OsteoTest.Entity, for: OsteoTest.Domain.Mechanism do
+defimpl Osteoporosis.Entity, for: Osteoporosis.Domain.Mechanism do
   def id(mechanism), do: mechanism.name
   def kind(_), do: :mechanism
 

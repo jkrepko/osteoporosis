@@ -1,5 +1,5 @@
-defmodule OsteoTest.Domain.Mechanisms.MechanismsGL do
-  # import OsteoTest.DSL
+defmodule Osteoporosis.Domain.Mechanisms.MechanismsGL do
+  # import Osteoporosis.DSL
   
   defmacro mechanisms_g_l do
   quote do

@@ -1,12 +1,12 @@
-defmodule OsteoTest.Demo.BasicPathway do
+defmodule Osteoporosis.Demo.BasicPathway do
   @moduledoc false
-  # alias OsteoTest
-  alias OsteoTest
+  # alias Osteoporosis
+  alias Osteoporosis
 
   def modules do
 	[
 	  # InsulinResistance #,
-	  OsteoTest
+	  Osteoporosis
 	  # CML
 	]
   end

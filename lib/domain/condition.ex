@@ -1,4 +1,4 @@
-defmodule OsteoTest.Domain.Condition do
+defmodule Osteoporosis.Domain.Condition do
   @moduledoc false
   
   defstruct [
@@ -9,7 +9,7 @@ defmodule OsteoTest.Domain.Condition do
 	interventions: []
   ]
 
-defimpl OsteoTest.Entity, for: OsteoTest.Domain.Condition do
+defimpl Osteoporosis.Entity, for: Osteoporosis.Domain.Condition do
 	def id(condition), do: condition.name
 	def kind(_), do: :condition
 

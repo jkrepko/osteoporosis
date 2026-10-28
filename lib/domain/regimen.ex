@@ -1,4 +1,4 @@
-defmodule OsteoTest.Domain.Regimen do
+defmodule Osteoporosis.Domain.Regimen do
   @moduledoc false
   
 defstruct [
@@ -10,7 +10,7 @@ defstruct [
 	confidence: :unknown
   ]
 
-  defimpl OsteoTest.Entity, for: OsteoTest.Domain.Regimen do
+  defimpl Osteoporosis.Entity, for: Osteoporosis.Domain.Regimen do
 	def id(regimen), do: regimen.name
 	def kind(_), do: :regimen
 

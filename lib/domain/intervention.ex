@@ -1,6 +1,6 @@
-defmodule OsteoTest.Domain.Intervention do
+defmodule Osteoporosis.Domain.Intervention do
 	
-alias OsteoTest.Fact
+alias Osteoporosis.Fact
   
   defstruct [
 	:name,
@@ -55,7 +55,7 @@ end
 	end)
   end
 
-  defimpl OsteoTest.Entity, for: OsteoTest.Domain.Intervention do
+  defimpl Osteoporosis.Entity, for: Osteoporosis.Domain.Intervention do
 	def id(intervention), do: intervention.name
 	def kind(_), do: :intervention
 

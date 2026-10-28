@@ -1,9 +1,9 @@
-defmodule OsteoTest.MixProject do
+defmodule Osteoporosis.MixProject do
   use Mix.Project
 
   def project do
 	[
-	  app: :osteo_test,
+	  app: :osteoporosis,
 	  version: "0.1.0",
 	  elixir: "~> 1.19",
 	  start_permanent: Mix.env() == :prod,

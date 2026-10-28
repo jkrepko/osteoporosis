@@ -1,7 +1,7 @@
-defmodule OsteoTest.Interventions do
+defmodule Osteoporosis.Interventions do
   @moduledoc false
-  use OsteoTest.Collection, attribute: :interventions
-  import OsteoTest.DSL
+  use Osteoporosis.Collection, attribute: :interventions
+  import Osteoporosis.DSL
 
 
   

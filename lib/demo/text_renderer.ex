@@ -1,11 +1,11 @@
 
 
-  defmodule OsteoTest.Demo.TextRenderer do
+  defmodule Osteoporosis.Demo.TextRenderer do
 	  @moduledoc """
 	  Renders text for demo display, or for passing to HtmlRenderer
 	  """
 	
-	  alias OsteoTest.Demo.OsteoTestDemo
+	  alias Osteoporosis.Demo.OsteoporosisDemo
 	
 	  def render(demos) do
 		demos
@@ -16,10 +16,10 @@
 	  defp render_demo(demo) do
 		"""
 		============================================================
-		#{"Pathways Example: OsteoTest"}
+		#{"Pathways Example: Osteoporosis"}
 		============================================================
 	
-		Queries: To understand the system, let's ask some questions about OsteoTest:
+		Queries: To understand the system, let's ask some questions about Osteoporosis:
 		-------
 		
 		#{render_queries(demo.queries)}
@@ -52,7 +52,7 @@
 	#   defp render_items(items) do
 	#     items
 	#     |> Enum.map(fn item ->
-	#       "  - #{english_name(OsteoTestDemo.get(item, :name, item))}"
+	#       "  - #{english_name(OsteoporosisDemo.get(item, :name, item))}"
 	#     end)
 	#     |> Enum.join("\n")
 	#   end
@@ -63,7 +63,7 @@
 	  items
 	  |> Enum.map(fn item ->
 		item
-		|> OsteoTestDemo.get(:name, item)
+		|> OsteoporosisDemo.get(:name, item)
 		|> english_name()
 	  end)
 	  |> Enum.sort_by(&String.downcase/1)
@@ -77,7 +77,7 @@
 		mechanisms
 		|> Enum.sort_by(fn mechanism ->
 		  mechanism
-		  |>OsteoTestDemo.get(:name, :unnamed_mechanism)
+		  |>OsteoporosisDemo.get(:name, :unnamed_mechanism)
 		  |> english_name()
 		  |> String.downcase()
 		end)
@@ -87,13 +87,13 @@
 	
 	  defp render_mechanism(m) do
 		"""
-		   - #{english_name(OsteoTestDemo.get(m, :name, :unnamed_mechanism))}
-			description:  #{OsteoTestDemo.get(m, :description, :none_given)}
-			consumes:    #{english_list(OsteoTestDemo.get(m, :consumes, []))}
-			produces:    #{english_list(OsteoTestDemo.get(m, :produces, []))}
-			explains:    #{english_list(OsteoTestDemo.get(m, :explains, []))}
-			inhibits:    #{english_list(OsteoTestDemo.get(m, :inhibits, []))}
-			inhibited by: #{english_list(OsteoTestDemo.get(m, :inhibited_by, []))}
+		   - #{english_name(OsteoporosisDemo.get(m, :name, :unnamed_mechanism))}
+			description:  #{OsteoporosisDemo.get(m, :description, :none_given)}
+			consumes:    #{english_list(OsteoporosisDemo.get(m, :consumes, []))}
+			produces:    #{english_list(OsteoporosisDemo.get(m, :produces, []))}
+			explains:    #{english_list(OsteoporosisDemo.get(m, :explains, []))}
+			inhibits:    #{english_list(OsteoporosisDemo.get(m, :inhibits, []))}
+			inhibited by: #{english_list(OsteoporosisDemo.get(m, :inhibited_by, []))}
 		"""
 	  end
 	
@@ -108,13 +108,13 @@
 	
 		defp render_condition(m) do
 		  """
-		  - #{english_name(OsteoTestDemo.get(m, :name, :unnamed_condition))}
-			  effects:    #{english_list(OsteoTestDemo.get(m, :effects, []))}
-			  mechanisms:    #{english_list(OsteoTestDemo.get(m, :mechanisms, []))}
-			  explains:    #{english_list(OsteoTestDemo.get(m, :explains, []))}
-			  signals: #{english_list(OsteoTestDemo.get(m, :signals, []))}
-			  interventions: #{english_list(OsteoTestDemo.get(m, :interventions, []))}
-			  confidence:  #{OsteoTestDemo.get(m, :confidence, :unknown)}
+		  - #{english_name(OsteoporosisDemo.get(m, :name, :unnamed_condition))}
+			  effects:    #{english_list(OsteoporosisDemo.get(m, :effects, []))}
+			  mechanisms:    #{english_list(OsteoporosisDemo.get(m, :mechanisms, []))}
+			  explains:    #{english_list(OsteoporosisDemo.get(m, :explains, []))}
+			  signals: #{english_list(OsteoporosisDemo.get(m, :signals, []))}
+			  interventions: #{english_list(OsteoporosisDemo.get(m, :interventions, []))}
+			  confidence:  #{OsteoporosisDemo.get(m, :confidence, :unknown)}
 		  """
 		end
 	
@@ -125,7 +125,7 @@
 	  interventions
 	  |> Enum.sort_by(fn intervention ->
 		intervention
-		|> OsteoTestDemo.get(:name, :unnamed_intervention)
+		|> OsteoporosisDemo.get(:name, :unnamed_intervention)
 		|> english_name()
 		|> String.downcase()
 	  end)
@@ -135,12 +135,12 @@
 	
 	defp render_intervention(m) do
 	  """
-	  - #{english_name(OsteoTestDemo.get(m, :name, :unnamed_intervention))}
-		  enhances:      #{english_list(OsteoTestDemo.get(m, :enhances, []))}
-		  inhibits:      #{english_list(OsteoTestDemo.get(m, :inhibits, []))}
-		  reduces:       #{english_list(OsteoTestDemo.get(m, :reduces, []))}
-		  increases_risk_of: #{english_list(OsteoTestDemo.get(m, :increases_risk_of, []))}
-		  indicated_agents: #{english_list(OsteoTestDemo.get(m, :indicated_agents, []))}
+	  - #{english_name(OsteoporosisDemo.get(m, :name, :unnamed_intervention))}
+		  enhances:      #{english_list(OsteoporosisDemo.get(m, :enhances, []))}
+		  inhibits:      #{english_list(OsteoporosisDemo.get(m, :inhibits, []))}
+		  reduces:       #{english_list(OsteoporosisDemo.get(m, :reduces, []))}
+		  increases_risk_of: #{english_list(OsteoporosisDemo.get(m, :increases_risk_of, []))}
+		  indicated_agents: #{english_list(OsteoporosisDemo.get(m, :indicated_agents, []))}
 	  """
 	end
 	
@@ -154,9 +154,9 @@
 	
 	  defp render_regimen(m) do
 		"""
-		   - #{english_name(OsteoTestDemo.get(m, :name, :unnamed_regimen))}
-			interventions:    #{english_list(OsteoTestDemo.get(m, :interventions, []))}
-			risks:      #{english_list(OsteoTestDemo.get(m, :risks, []))}
+		   - #{english_name(OsteoporosisDemo.get(m, :name, :unnamed_regimen))}
+			interventions:    #{english_list(OsteoporosisDemo.get(m, :interventions, []))}
+			risks:      #{english_list(OsteoporosisDemo.get(m, :risks, []))}
 		"""
 	  end
 	

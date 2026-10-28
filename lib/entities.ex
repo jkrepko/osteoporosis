@@ -1,4 +1,4 @@
-  defmodule OsteoTest.Entities do
+  defmodule Osteoporosis.Entities do
   @moduledoc false
 
   def all_entities(pathway) do

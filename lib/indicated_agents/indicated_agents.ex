@@ -1,7 +1,7 @@
-defmodule OsteoTest.IndicatedAgents do
+defmodule Osteoporosis.IndicatedAgents do
   @moduledoc false
-  use OsteoTest.Collection, attribute: :indicated_agents
-  import OsteoTest.DSL
+  use Osteoporosis.Collection, attribute: :indicated_agents
+  import Osteoporosis.DSL
 
 
 	indicated_agent :"17_beta_estradiol_oral" do

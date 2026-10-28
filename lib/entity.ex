@@ -1,4 +1,4 @@
-     defprotocol  OsteoTest.Entity do
+     defprotocol  Osteoporosis.Entity do
   @moduledoc false
 
   def id(entity)

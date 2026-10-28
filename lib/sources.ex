@@ -1,4 +1,4 @@
-defmodule OsteoTest.Sources do
+defmodule Osteoporosis.Sources do
   @moduledoc false
   @sources %{
 	  # guideline_1: %{
