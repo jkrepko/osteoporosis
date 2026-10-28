@@ -1,5 +1,7 @@
 defmodule Osteoporosis.Domain.Intervention do
-	
+  @moduledoc false
+  use Osteoporosis.Collection, attribute: :mechanisms
+	  
 alias Osteoporosis.Fact
   
   defstruct [
