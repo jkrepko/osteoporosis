@@ -104,10 +104,11 @@
 		  Module.put_attribute(__MODULE__, :indicated_agents, indicated_agent)
 	  end
 	end
+	
 	defmacro condition(name, do: block) do
 	  quote do
 	        
-                Module.put_attribute(__MODULE__, :description, nil)
+        Module.put_attribute(__MODULE__, :description, nil)
 		Module.put_attribute(__MODULE__, :mechanisms, [])
 		Module.put_attribute(__MODULE__, :signals, [])
 		Module.put_attribute(__MODULE__, :interventions, [])
