@@ -68,8 +68,8 @@ defp run_new_fn_queries(pathway) do
 	g = %{g | facts: filtered_facts ++ derived_facts}
 	[
 	  %{
-			question: "In my model, how many Mechanisms, Interventions, Signals, and Indicated Agents are there?",
-			answer: "#{length(p.mechanisms)} Mechanisms, #{length(p.interventions)} Interventions, #{length(p.signals)} Signals, and #{length(indicated_agents)} Indicated Agents"
+			question: "In my model, how many Mechanisms, Regimens, Interventions, Signals, and Indicated Agents are there?",
+			answer: "#{length(p.mechanisms)} Mechanisms, #{length(p.regimens)} Regimens,  #{length(p.interventions)}  Interventions, #{length(p.signals)} Signals, and #{length(indicated_agents)} Indicated Agents"
 	   },
 	   %{
 			 question: "How many Facts does that add up to?",
