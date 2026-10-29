@@ -74,6 +74,8 @@ defmodule Osteoporosis.Demo.HtmlRenderer do
 	|> String.replace("increases_risk_of:", "<strong>increases risk of: </strong>")
 	|> String.replace("indicated_agents:", "<strong>indicated agents: </strong>")
 	|> String.replace("indicated agents:", "<strong>indicated agents: </strong>")
+    |> String.replace("intended_effects:", "<strong>intended effects:</strong>")
+	|> String.replace("intended effects:", "<strong>intended effects:</strong>")
 	|> String.replace("confidence:", "<strong>confidence:</strong>")
 	|> String.replace("effects:", "<strong>effects:</strong>")
 	|> String.replace("mechanisms:", "<strong>mechanisms:</strong>")

@@ -3,7 +3,7 @@ defmodule Osteoporosis.Domain.Regimen do
   
 defstruct [
 	:name,
-	description: nil,
+	:description,
 	interventions: [],
 	intended_effects: [],
 	risks: [],

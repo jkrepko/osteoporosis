@@ -38,19 +38,21 @@ Pathways Example: Osteoporosis<br>
 Queries: To understand the system, let's ask some questions about Osteoporosis:<br>
 -------<br>
 <br>
-<strong>Q: In my model, how many Mechanisms, Regimens, Interventions, Signals, and Indicated Agents are there?<br></strong>
+<strong>Q: In my model, how many Conditions, Mechanisms,  Signals, Regimens,Interventions, and Indicated Agents are there?<br></strong>
 A:<br>
-  - 20 Mechanisms, 3 Regimens,  27  Interventions, 34 Signals, and 38 Indicated Agents<br>
+  - 10 Conditions, 20 Mechanisms, 34 Signals, 3 Regimens, 27  Interventions, and 38 Indicated Agents<br>
 <br>
 <strong>Q: How many Facts does that add up to?<br></strong>
 A:<br>
-  - 928 Facts<br>
+  - 1031 Facts<br>
 <br>
 <strong>Q: How many relationships do you track?<br></strong>
 A:<br>
   -  I track the these relationship types:<br>
- <strong><strong>explains:</strong></strong> 38<br>
-<strong><strong>interventions:</strong></strong> 106<br>
+ <strong>mechanisms:</strong> 28<br>
+<strong><strong>explains:</strong></strong> 38<br>
+<strong>signals:</strong> 35<br>
+<strong><strong>interventions:</strong></strong> 146<br>
 <strong>enhances:</strong> 114<br>
 <strong>inhibits:</strong> 116<br>
 <strong>indicated agents: </strong> 75<br>
@@ -59,7 +61,7 @@ A:<br>
 <strong>inhibited by:</strong> 126<br>
 <strong>enhanced by:</strong> 120<br>
 <strong>contraindicated by: </strong> 144<br>
-intended <strong>effects:</strong> 11 relationships<br>
+<strong>intended <strong>effects:</strong></strong> 11 relationships<br>
 <br>
 <strong>Q: What kind of signals do you follow that I can track?<br></strong>
 A:<br>
@@ -555,12 +557,93 @@ Domain definition<br>
 <br>
 <br>
 <strong>Conditions:</strong><br>
-- a sample condition<br>
+- anorexia nervosa<br>
  <strong>effects:</strong>    none<br>
- <strong>mechanisms:</strong>    none<br>
+ <strong>mechanisms:</strong>    profound estrogen deficiency from hypothalamic amenorrhea, nutritional depletion of calcium, nutritional depletion of vitamin D, nutritional depletion of protein, elevated baseline cortisol and low anabolic hormones IGF 1<br>
  <strong><strong>explains:</strong></strong>    none<br>
- <strong>signals:</strong> none<br>
- <strong><strong>interventions:</strong></strong> none<br>
+ <strong>signals:</strong> extremely low body mass index BMI, primary or secondary amenorrhea, low serum IGF 1 and leptin levels<br>
+ <strong><strong>interventions:</strong></strong> nutritional rehabilitation and weight restoration, restoration of menstrual function transdermal estrogen if needed, calcium and vitamin D supplementation, Cognitive behavioral therapy CBT<br>
+ <strong>confidence:</strong>  unknown<br>
+<br>
+<br>
+- celiac disease<br>
+ <strong>effects:</strong>    none<br>
+ <strong>mechanisms:</strong>    malabsorption of calcium and fat soluble vitamin D, secondary hyperparathyroidism, impaired bone mineralization<br>
+ <strong><strong>explains:</strong></strong>    none<br>
+ <strong>signals:</strong> positive anti tTG IgA antibodies, gastrointestinal distress, low serum vitamin D and calcium, elevated alkaline phosphatase<br>
+ <strong><strong>interventions:</strong></strong> strict lifelong gluten free diet, high dose vitamin D and calcium supplementation, routine bone density monitoring<br>
+ <strong>confidence:</strong>  unknown<br>
+<br>
+<br>
+- CKD MBD<br>
+ <strong>effects:</strong>    none<br>
+ <strong>mechanisms:</strong>    phosphate retention stimulating FGF23 and secondary hyperparathyroidism, skeletal resistance to PTH resulting in altered bone turnover states<br>
+ <strong><strong>explains:</strong></strong>    none<br>
+ <strong>signals:</strong> elevated serum fibroblast growth factor 23 FGF23, hyperphosphatemia and abnormal intact PTH levels, vascular calcifications on diagnostic imaging<br>
+ <strong><strong>interventions:</strong></strong> dietary phosphate restriction, phosphate binders, sevelamer, calcium acetate, calcimimetics  cinacalcet, active vitamin D analogs<br>
+ <strong>confidence:</strong>  unknown<br>
+<br>
+<br>
+- diabetes mellitus<br>
+ <strong>effects:</strong>    none<br>
+ <strong>mechanisms:</strong>    accumulation of advanced glycation end products AGEs impairing collagen cross linking, chronic microvascular disease reducing bone perfusion, direct inhibitory effects of high glucose on osteoblast differentiation<br>
+ <strong><strong>explains:</strong></strong>    none<br>
+ <strong>signals:</strong> fractures occurring despite normal or mildly reduced BMD T scores, impaired fracture healing rates, chronically elevated glycated hemoglobin<br>
+ <strong><strong>interventions:</strong></strong> strict glycemic control using bone neutral agents, avoidance of anti diabetic medications known to increase fracture risk, comprehensive fall prevention strategies<br>
+ <strong>confidence:</strong>  unknown<br>
+<br>
+<br>
+- glucocorticoid induced osteoporosis<br>
+ <strong>effects:</strong>    none<br>
+ <strong>mechanisms:</strong>    inhibition of osteoblast differentiation, promotion of osteocyte apoptosis, increased urinary calcium excretion, secondary inhibition of intestinal calcium absorption<br>
+ <strong><strong>explains:</strong></strong>    none<br>
+ <strong>signals:</strong> rapid bone loss shortly after therapy initiation, fragility fractures at higher BMD thresholds, back pain from vertebral compression<br>
+ <strong><strong>interventions:</strong></strong> dose minimization or discontinuation, bisphosphonates, teriparatide, calcium and vitamin D supplementation<br>
+ <strong>confidence:</strong>  unknown<br>
+<br>
+<br>
+- hyperparathyroidism<br>
+ <strong>effects:</strong>    none<br>
+ <strong>mechanisms:</strong>    cortical bone loss, high PTH levels stimulating bone resorption<br>
+ <strong><strong>explains:</strong></strong>    none<br>
+ <strong>signals:</strong> hypercalcemia, hypophosphatemia, elevated serum intact PTH, subperiosteal bone resorption on radiographs<br>
+ <strong><strong>interventions:</strong></strong> surgical parathyroidectomy, vitamin D repletion, cinacalcet, anti resorptive agents<br>
+ <strong>confidence:</strong>  unknown<br>
+<br>
+<br>
+- hyperthyroidism<br>
+ <strong>effects:</strong>    none<br>
+ <strong>mechanisms:</strong>    excess triiodothyronine T3 directly stimulates osteoclast activity, shortening of the bone remodeling cycle where resorption outpaces formation<br>
+ <strong><strong>explains:</strong></strong>    none<br>
+ <strong>signals:</strong> suppressed serum TSH with elevated free T3 and T4, unexplained weight loss and tachycardia, hypercalciuria, mild hypercalcemia<br>
+ <strong><strong>interventions:</strong></strong> anti thyroid medications, methimazole, radioactive iodine ablation, surgical thyroidectomy, calcium and vitamin D supplementation<br>
+ <strong>confidence:</strong>  unknown<br>
+<br>
+<br>
+- postmenopausal osteoporosis<br>
+ <strong>effects:</strong>    none<br>
+ <strong>mechanisms:</strong>    estrogen deficiency, enhanced osteoclast formation and activity, reduced osteoblast lifespan<br>
+ <strong><strong>explains:</strong></strong>    none<br>
+ <strong>signals:</strong> low BMD t score, asymptomatic height loss, fragility, fractures<br>
+ <strong><strong>interventions:</strong></strong> bisphosphonates, Hormone replacement therapy, calcium and vitamin D supplementation, denosumab<br>
+ <strong>confidence:</strong>  unknown<br>
+<br>
+<br>
+- primary biliary cholangitis<br>
+ <strong>effects:</strong>    none<br>
+ <strong>mechanisms:</strong>    impaired bile flow leading to severe malabsorption of fat soluble vitamins D and K, direct inhibitory effects of chronic cholestasis and cytokines on osteoblasts<br>
+ <strong><strong>explains:</strong></strong>    none<br>
+ <strong>signals:</strong> positive anti mitochondrial antibodies AMA, elevated serum alkaline phosphatase and gamma glutamyl transferase GGT, pruritus, fatigue and low BMD on screening<br>
+ <strong><strong>interventions:</strong></strong> ursodeoxycholic acid UDCA therapy, high dose fat soluble vitamin supplementation, bisphosphonate therapy, evaluation for liver transplantation in advanced disease<br>
+ <strong>confidence:</strong>  unknown<br>
+<br>
+<br>
+- rheumatoid arthritis<br>
+ <strong>effects:</strong>    none<br>
+ <strong>mechanisms:</strong>    upregulation of pro inflammatory cytokines, activation of the RANKL pathway promoting osteoclastogenesis<br>
+ <strong><strong>explains:</strong></strong>    none<br>
+ <strong>signals:</strong> elevated inflammatory markers, joint swelling and pain, generalized reduction in bone density<br>
+ <strong><strong>interventions:</strong></strong> DMARDs and biologic agents, concurrent bisphosphonate therapy, physical therapy<br>
  <strong>confidence:</strong>  unknown<br>
 <br>
 <br>

@@ -3,7 +3,7 @@ defmodule Osteoporosis.Domain.Condition do
   
   defstruct [
 	:name,
-	description: nil,
+	:description,
 	mechanisms: [],
 	signals: [],
 	interventions: []
