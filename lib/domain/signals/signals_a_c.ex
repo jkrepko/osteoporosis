@@ -17,6 +17,32 @@ defmodule Osteoporosis.Domain.Signals.SignalsAC do
 			end
 			
 			
+			
+			signal :activated_osteoclasts do
+			description "Activated osteoclasts are bone-resorbing cells that have been stimulated to degrade bone matrix, a process driven primarily by the RANKL/RANK signaling pathway and co-stimulatory signals from ITAM adaptors like DAP12 and FcRγ. This activation is a cytokine-mediated signal triggered by pro-inflammatory cytokines (such as TNF-α and IL-1β) and molecular interactions that activate the master transcription factor NFATc1. This factor upregulates key resorptive enzymes including TRAP, cathepsin K (CTSK), and MMP-9, which degrade the mineral and organic components of bone. "
+			
+			signal_type :process_state
+			
+			indicates [
+				bone_resorption: [ when: :increased, direction: :increased ],        # valine, leucine, tyrosine, and tryptophan
+				bone_loss: [ when: :increased, direction: :increased ], 
+				bone_mass: [ when: :increased, direction: :decreased ], # glycine, citrulline, and homocysteine
+				]
+			end
+			
+			
+			signal :active_rankl do
+			description "Active RANKL is a cytokine ligand belonging to the tumor necrosis factor (TNF) superfamily that acts as a positive signal for bone resorption.  It indicates an imbalance in bone remodeling where the ratio of RANKL to its decoy receptor, OPG, is elevated, leading to excessive osteoclast differentiation, activation, and survival. "
+			
+			signal_type :molecule
+			
+			indicates [
+				bone_resorption: [ when: :increased, direction: :increased ],        # valine, leucine, tyrosine, and tryptophan
+				bone_loss: [ when: :increased, direction: :increased ]   # glycine, citrulline, and homocysteine
+				]
+			end
+			
+			
 			signal :amino_acids do
 			description "These compounds are significant because they directly regulate the balance between bone formation and bone resorption, serving as both diagnostic markers and therapeutic targets."
 			
@@ -75,6 +101,22 @@ defmodule Osteoporosis.Domain.Signals.SignalsAC do
 				bone_mineral_density:   [ when: :increased, direction: :increased ],    
 				]
 			end
+			
+			
+			signal :basic_multicellular_units do
+			description "Basic multicellular units (BMUs) are temporary anatomic structures composed of coordinated teams of osteoclasts (bone-resorbing cells) and osteoblasts (bone-forming cells) that facilitate bone remodeling. BMUs are not signals themselves, but rather the mechanical and cellular executioners of signals; however, they are regulated by key signaling molecules like RANKL (promotes resorption) and Wnt antagonists like sclerostin (inhibits formation)."
+			
+			signal_type :tissue
+			
+			indicates [
+				osteoclast_activity:    [ when: :increased, direction: :increased ],       
+				osteoblast_capacity:    [ when: :increased, direction: :decreased],
+				bone_loss:              [ when: :increased, direction: :increased ],   
+				fragility:              [ when: :increased, direction: :increased ],  
+				]
+			end
+			
+			
 			
 			
 			signal :bone_degradation_products_ctx_ntx do
@@ -171,6 +213,19 @@ defmodule Osteoporosis.Domain.Signals.SignalsAC do
 		
 			end
 			
+			
+			signal :cytosolic_beta_catenin do
+			description "Cytosolic β-catenin refers to the stabilized, unbound form of the β-catenin protein that accumulates in the cytoplasm due to the inhibition of its degradation complex (which includes GSK-3β and Axin).  It serves as a positive signaling molecule that transmits Wnt pathway signals to the nucleus to activate gene expression."
+			
+			signal_type :molecule
+			
+			indicates [
+				active_osteogenesis: [ when: :increased, direction: :increased ],
+				osteoblast_differentiation: [ when: :increased, direction: :increased],
+				bone_formation: [ when: :increased, direction: :increased],
+				osteoclast_activity: [ when: :increased, direction: :decreased]
+				]
+			end
 			
 			
 			signal :cortical_shell do

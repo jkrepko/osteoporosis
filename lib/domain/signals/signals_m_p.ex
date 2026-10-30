@@ -5,6 +5,32 @@ defmodule Osteoporosis.Domain.Signals.SignalsMP do
 	quote do
 		
 		
+		
+		signal :mature_osteoblast_secretory_products do
+			description "Mature osteoblasts exhibit an altered senescence-associated secretory phenotype (SASP) characterized by increased IL-6, reduced IL-8 and angiogenin, and decreased expression of extracellular matrix proteins such as osteopontin, osteonectin, progranulin, and thrombospondin-1. These secretory products act as paracrine signals that significantly enhance endothelial cell migration and proliferation, indicating a dysregulated interaction between bone-forming cells and the vascular system."
+			
+			signal_type :molecule
+		  
+			indicates [
+			  angiogenesis:  [ when: :increased, direction: :decreased ],
+			  inflammation:  [ when: :increased, direction: :increased ]
+			  ]
+		  end
+		
+		signal :mechanical_strain_signals do
+			description "Mechanical strain signals in osteoporosis refer to physical deformations (strains) experienced by bone tissue during activity, which serve as the primary anabolic regulatory cues for skeletal health.  These signals are characterized by their magnitude (intensity of deformation) and frequency (rate of application), with research indicating that even extremely low-magnitude strains (three orders of magnitude below those causing damage) can be osteogenic if applied at high frequencies (e.g., 15–90 Hz)."
+			
+			signal_type :tissue
+		  
+			indicates [
+			  bone_strength: [ when: :increased, direction: :decreased ],
+			  sclerostin:    [ when: :increased, direction: :decreased ],
+			  RANKL:         [ when: :increased, direction: :decreased ],
+			  Wnt_β_catenin: [ when: :increased, direction: :increased]
+			  ]
+		  end
+		  
+		
 		signal :microcracks_in_matrix do
 			description "In osteoporosis, microcracks in the matrix are linear fractures approximately 50 to 100 microns long that result from fatigue damage and represent a critical component of reduced bone quality and increased skeletal fragility.  These microcracks indicate an imbalance between damage creation and repair, where the accumulation of microdamage reduces the bone’s elastic modulus and toughness, predisposing the tissue to fragility fractures. "
 			
@@ -82,6 +108,18 @@ defmodule Osteoporosis.Domain.Signals.SignalsMP do
 		  end
 		  
 		  
+		  signal :osteoprogenitor_pools do
+			  description "Osteoprogenitor pools are reservoirs of undifferentiated mesenchymal stem and progenitor cells that can differentiate into osteoblasts to form new bone.  These cells are present in the bone marrow stroma, periosteum, endosteum, and as circulating osteoprogenitor (COP) cells in the peripheral blood. As a signal, these pools indicate the body's capacity for bone formation and repair. They mobilize during high-turnover states like fracture healing, pubertal growth, and postmenopausal osteoporosis. "
+			  
+			  signal_type :process_state
+			
+			  indicates [
+				bone_mineral_density:  [ when: :increased, direction: :increased ],
+				bone_loss:             [ when: :decreased, direction: :increased]
+				]
+			end
+		  
+		  
 		  signal :periosteal_expansion do
 			description "Periosteal expansion is the compensatory widening of the bone's outer diameter via new bone formation on the outer surface.  Its significance lies in biomechanical adaptation: because a hollow tube resists bending better than a solid rod of the same weight, this expansion partially offsets the loss of structural strength caused by the thinning of the inner bone."
 			
@@ -95,7 +133,7 @@ defmodule Osteoporosis.Domain.Signals.SignalsMP do
 		  
 		  
 		  signal :phosphate_ions do
-			description "In osteoporosis, phosphate is critical because 85% of the body's phosphorus is stored in bones and teeth, where it combines with calcium to form hydroxyapatite, the crystalline compound providing structural strength.  In osteoporosis management and diagnosis, serum phosphate levels help differentiate primary from secondary causes of bone loss."
+			description "Phosphate is critical because 85% of the body's phosphorus is stored in bones and teeth, where it combines with calcium to form hydroxyapatite, the crystalline compound providing structural strength.  In osteoporosis management and diagnosis, serum phosphate levels help differentiate primary from secondary causes of bone loss."
 			
 			signal_type :molecule
 		  
@@ -105,6 +143,22 @@ defmodule Osteoporosis.Domain.Signals.SignalsMP do
 			  phosphate_toxicity: [ when: :increased, direction: :increased]
 			  ]
 		  end
+		  
+		  
+		  
+		  signal :pro_inflammatory_cytokines_il1_il6_tnfa do
+			  description "IL-1, IL-6, and TNF-α are pro-inflammatory cytokines that serve as key biochemical signals driving bone loss.  They are classified as osteoclastogenic signals, meaning they actively stimulate the formation, activation, and survival of osteoclasts (bone-resorbing cells) while simultaneously inhibiting osteoblasts (bone-forming cells)."
+			  
+			  signal_type :molecule
+			
+			  indicates [
+				systemic_inflammation:            [ when: :increased, direction: :increased ],
+				bone_loss:                        [ when: :increased, direction: :increased],
+				rankl_signaling:                  [ when: :increased, direction: :increased],
+				osteoclast_differentiation:       [ when: :increased, direction: :increased],
+				fracture_risk:                    [ when: :increased, direction: :increased]
+				]
+			end
 		
 		
 	  end

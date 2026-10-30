@@ -17,6 +17,18 @@ defmodule Osteoporosis.Domain.Signals.SignalsGL do
 			  ]
 		  end
 		  
+		
+		signal :inorganic_phosphate do
+			description "Inorganic phosphate (also known as inorganic phosphorus) is a critical mineral essential for bone mineralization and cellular energy (ATP) production.  It serves as a primary ionic component of hydroxyapatite, the crystal structure that provides hardness and strength to the bone matrix."
+			
+			signal_type :molecule
+		  
+			indicates [
+			  rickets: [ when: :decreased, direction: :increased ],
+			  calcium_loss: [ when: :increased, direction: :increased]
+			  ]
+		  end
+		  
 		  
 		  signal :intact_trabecular_struts_and_plates do
 			description "Intact trabecular struts and plates are the microscopic, load-bearing components of trabecular (cancellous) bone that form a connected, honeycomb-like internal scaffold.  In a healthy skeleton, these structures are predominantly plate-like (broad, flat sheets) rather than rod-like, providing superior resistance to compression and bending while minimizing weight."
