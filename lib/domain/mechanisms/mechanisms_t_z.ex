@@ -12,12 +12,12 @@ defmodule Osteoporosis.Domain.Mechanisms.MechanismsTZ do
       :canonical_wnt_ligands,
       :cytosolic_beta_catenin,
       :lrp5_6_receptors,
+      :osteoid_production,
       :atp
       ]
       produces [
       :suppressed_osteogenic_transcription,
       :ubiquitinated_beta_catenin_degradation_complexes,
-      :reduced_osteoid_production
       ]
       explains [
       :impaired_bone_formation_capacity,

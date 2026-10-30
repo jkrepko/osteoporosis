@@ -82,6 +82,32 @@ defmodule Osteoporosis.Domain.Signals.SignalsMP do
 			  ]
 		  end
 		  
+		  
+		  signal :nuclear_estrogen_receptors_alpha_beta do
+			description "Nuclear Estrogen Receptors Alpha and Beta (ERα and ERβ) are ligand-activated transcription factors belonging to the Class I nuclear receptor superfamily that mediate the effects of estrogens (such as estradiol) on bone metabolism.  They function as genomic signals, primarily by dimerizing and binding directly to specific DNA sequences called Estrogen Response Elements (ERE) to regulate gene transcription, although they also participate in non-genomic and ligand-independent signaling pathways."
+			
+			signal_type :molecule
+		  
+			indicates [
+			  osteoclast_apoptosis: [ when: :increased, direction: :increased ],
+			  bone_mass: [ when: :increased, direction: :increased],
+			  bone_mineral_density: [ when: :increased, direction: :decreased ]
+			  ]
+		  end
+		  
+		  
+		  signal :osteocyte_networks do
+			  description "Osteocyte networks are extensive, interconnected systems of mature bone cells embedded within the mineralized bone matrix, linked by dendritic processes through a lacuno-canalicular network.  They function as mechanosensory and signaling units that detect mechanical strain, metabolic changes, and microdamage, translating these physical cues into biochemical signals."
+			  
+			  signal_type :tissue
+			
+			  indicates [
+				osteoclast_activity: [ when: :decreased, direction: :increased ],
+				RANKL_expression: [ when: :decreased, direction: :increased]
+				]
+			end
+			
+		  
 		  signal :osteoblast_progenitor_cells do
 			description "Osteoprogenitor cells, also known as osteogenic cells or preosteoblasts, are committed mesenchymal stem cells that serve as the primary source for new bone formation by differentiating into osteoblasts. The  significance of these cells lies in their dysfunction or reduced activity, which contributes to decreased bone formation and increased fragility."
 			
@@ -102,9 +128,12 @@ defmodule Osteoporosis.Domain.Signals.SignalsMP do
 		  
 			indicates [
 			  senile_osteoporosis: [ when: :decreased, direction: :increased ],
-			  bone_fragility: [ when: :decreased, direction: :increased],
-			  fracture_risk: [ when: :decreased, direction: :increased]
-			  ]
+			  bone_fragility:      [ when: :decreased, direction: :increased],
+			  fracture_risk:       [ when: :decreased, direction: :increased],
+			  bone_formation:      [ when: :decreased, direction: :decreased ],
+			  osteoblast_activity: [ when: :decreased, direction: :decreased],
+			  bone_mass:           [ when: :decreased, direction: :decreased],
+			]
 		  end
 		  
 		  
@@ -154,7 +183,7 @@ defmodule Osteoporosis.Domain.Signals.SignalsMP do
 			  indicates [
 				systemic_inflammation:            [ when: :increased, direction: :increased ],
 				bone_loss:                        [ when: :increased, direction: :increased],
-				rankl_signaling:                  [ when: :increased, direction: :increased],
+				RANKL_signaling:                  [ when: :increased, direction: :increased],
 				osteoclast_differentiation:       [ when: :increased, direction: :increased],
 				fracture_risk:                    [ when: :increased, direction: :increased]
 				]

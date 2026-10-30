@@ -73,12 +73,12 @@ defmodule Osteoporosis.Domain.Mechanisms.MechanismsMP do
         :mechanical_strain_signals,
         :oxygen_radicals_oxidative_stress,
         :gap_junction_communication_channels,
-        :viable_osteocyte_networks
+        :osteocyte_networks
       ]
       produces [
         :elevated_apoptotic_signals_caspases,
         :rankl_hotspots_at_remodeling_sites,
-        :senescence_associated_secretory_phenotype_sasp
+        :senescence_associated_secretory_phenotype
       ]
       explains [
         :accumulation_of_microcracks_in_aged_bone,

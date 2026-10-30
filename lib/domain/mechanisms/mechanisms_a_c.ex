@@ -16,12 +16,12 @@ defmodule Osteoporosis.Domain.Mechanisms.MechanismsAC do
 			 :bioavailable_calcium_ions,
 			 :inorganic_phosphate,
 			 :alkaline_phosphatase_activity,
-			 :mature_osteoblast_secretory_products
+			 :mature_osteoblast_secretory_products,
+			 :hydroxyapatite_deposition
 			 ]
 		   produces [
-			 :impaired_hydroxyapatite_deposition,
 			 :abnormal_osteoid_maturation,
-			 :brittle_microarchitectural_stress_points,
+			 :bone_brittleness,
 			 :local_calcium_phosphate_imbalance
 			 ]
 		   explains [
@@ -63,7 +63,7 @@ defmodule Osteoporosis.Domain.Mechanisms.MechanismsAC do
 		  family :skeletal_homeostasis_and_remodeling_dynamics
 		  role :pathogenic
 		  consumes [
-			:basic_multicellular_units_bmus,
+			:basic_multicellular_units,
 			:quiescent_bone_surfaces,
 			:osteoprogenitor_pools,
 			:mineralizing_surface_area

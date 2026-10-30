@@ -136,10 +136,7 @@
 	defp render_intervention(m) do
 	  """
 	  - #{english_name(OsteoporosisDemo.get(m, :name, :unnamed_intervention))}
-		  enhances:      #{english_list(OsteoporosisDemo.get(m, :enhances, []))}
-		  inhibits:      #{english_list(OsteoporosisDemo.get(m, :inhibits, []))}
-		  reduces:       #{english_list(OsteoporosisDemo.get(m, :reduces, []))}
-		  increases_risk_of: #{english_list(OsteoporosisDemo.get(m, :increases_risk_of, []))}
+		  effects:          #{english_list(OsteoporosisDemo.get(m, :effects, []))}
 		  indicated_agents: #{english_list(OsteoporosisDemo.get(m, :indicated_agents, []))}
 	  """
 	end

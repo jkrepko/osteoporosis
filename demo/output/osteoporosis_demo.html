@@ -38,38 +38,13 @@ Pathways Example: Osteoporosis<br>
 Queries: To understand the system, let's ask some questions about Osteoporosis:<br>
 -------<br>
 <br>
-<strong>Q: In my model, how many Conditions, Mechanisms,  Signals, Regimens,Interventions, and Indicated Agents are there?<br></strong>
+<strong>Q: In my Osteoporosis model, how many Conditions, Mechanisms,  Signals, Regimens,Interventions, and Indicated Agents are there?<br></strong>
 A:<br>
-  - 10 Conditions, 20 Mechanisms, 45 Signals, 3 Regimens, 27  Interventions, and 38 Indicated Agents<br>
+  - 10 Conditions, 20 Mechanisms, 63 Signals, 3 Regimens, 27  Interventions, and 38 Indicated Agents<br>
 <br>
 <strong>Q: How many Facts does that add up to?<br></strong>
 A:<br>
-  - 1103 Facts<br>
-<br>
-<strong>Q: How many relationships do you track?<br></strong>
-A:<br>
-  -  I track the these relationship types:<br>
- <strong>mechanisms:</strong> 28<br>
-<strong><strong>explains:</strong></strong> 38<br>
-<strong>signals:</strong> 35<br>
-<strong><strong>interventions:</strong></strong> 146<br>
-<strong>enhances:</strong> 138<br>
-<strong>inhibits:</strong> 128<br>
-<strong>indicated agents: </strong> 75<br>
-<strong>consumes:</strong> 45<br>
-<strong>produces:</strong> 33<br>
-<strong>inhibited by:</strong> 138<br>
-<strong>enhanced by:</strong> 144<br>
-<strong>contraindicated by: </strong> 144<br>
-<strong>intended <strong>effects:</strong></strong> 11 relationships<br>
-<br>
-<strong>Q: What kind of signals do you follow that I can track?<br></strong>
-A:<br>
-  -  I follow the these <strong>signals:</strong><br>
- process state: 19<br>
-molecule: 17<br>
-tissue: 7<br>
-cells: 2<br>
+  - 1235 Facts<br>
 <br>
 <strong>Q: I keep a strict diet, and watch my Vitamin D. What symptoms can this diet help?<br></strong>
 A:<br>
@@ -92,7 +67,11 @@ A:<br>
   - sclerostin mediated osteogenesis inhibition<br>
   - wnt beta catenin signaling suppression<br>
 <br>
-<strong>Q: Wow - that's a lot.  Suppose I just stick to Vitamin D and Calcium - what does that help?<br></strong>
+<strong>Q: I've never heard of 'impaired osteoblastogenesis' - can you describe it to me?<br></strong>
+A:<br>
+  - A functional decline of osteoblasts, the cells responsible for synthesizing new bone matrix, leading to an uncoupling of the bone remodeling cycle.<br>
+<br>
+<strong>Q: Suppose I just stick to Vitamin D and Calcium - what does that help?<br></strong>
 A:<br>
   - fall risk<br>
   - fracture risk<br>
@@ -109,8 +88,8 @@ Domain definition<br>
 		   formed osteoid matrix. This dysregulation leads to either osteomalacic changes <br>
 		   (insufficient mineralization) or hyper-mineralized, brittle bone microarchitectures <br>
 		   that compromise overall skeletal biomechanical competence and fracture resistance.<br>
-	<strong>consumes:</strong>    bioavailable calcium ions, inorganic phosphate, alkaline phosphatase activity, mature osteoblast secretory products<br>
-	<strong>produces:</strong>    impaired hydroxyapatite deposition, abnormal osteoid maturation, brittle microarchitectural stress points, local calcium phosphate imbalance<br>
+	<strong>consumes:</strong>    bioavailable calcium ions, inorganic phosphate, alkaline phosphatase activity, mature osteoblast secretory products, hydroxyapatite deposition<br>
+	<strong>produces:</strong>    abnormal osteoid maturation, bone brittleness, local calcium phosphate imbalance<br>
 	<strong><strong>explains:</strong></strong>    decreased bone tensile strength independent of density, atypical femoral fractures under low load, compromised fracture healing dynamics in elderly patients<br>
 	<strong>inhibits:</strong>    normal osteoid mineralization front, physiological bone toughness and elasticity, optimal crystal lattice formation<br>
 	<strong>inhibited by:</strong> bisphosphonate therapy, calcium and vitamin D supplementation, strontium ranelate modulation<br>
@@ -127,7 +106,7 @@ Domain definition<br>
 <br>
    - bone remodeling uncoupling<br>
 	<strong>description:</strong>  Disruption of the physiological coupling between osteoclast-mediated bone resorption and osteoblast-mediated bone formation results in a negative bone balance per remodeling cycle, driving progressive trabecular perforation, cortical porosity, and skeletal fragility.<br>
-	<strong>consumes:</strong>    basic multicellular units bmus, quiescent bone surfaces, osteoprogenitor pools, mineralizing surface area<br>
+	<strong>consumes:</strong>    basic multicellular units, quiescent bone surfaces, osteoprogenitor pools, mineralizing surface area<br>
 	<strong>produces:</strong>    resorption pits exceeding formation volume, negative bone balance per remodeling cycle, trabecular perforations, cortical porosity<br>
 	<strong><strong>explains:</strong></strong>    progressive loss of bone mineral density, deterioration of microarchitecture, increased fracture risk, failure of bone mass restoration<br>
 	<strong>inhibits:</strong>    osteoblast bone formation rate, mineralization apposition rate, trabecular connectivity<br>
@@ -164,7 +143,7 @@ Domain definition<br>
    - estrogen receptor signaling deficiency<br>
 	<strong>description:</strong>  Systemic estrogen deficiency removes protective signaling on bone cells, upregulating RANKL, promoting pro-inflammatory cytokine release, and accelerating osteoclastogenesis while reducing osteoblast lifespan, driving postmenopausal osteoporosis.<br>
 	<strong>consumes:</strong>    17 beta estradiol, nuclear estrogen receptors alpha beta, transcriptional coregulators<br>
-	<strong>produces:</strong>    unsuppressed rankl secretion, pro inflammatory cytokines il1 il6 tnfa, accelerated osteoclast differentiation<br>
+	<strong>produces:</strong>    rankl secretion, pro inflammatory cytokines il1 il6 tnfa, accelerated osteoclast differentiation<br>
 	<strong><strong>explains:</strong></strong>    rapid trabecular bone loss postmenopause, increased bone turnover markers, widened remodeling space, accelerated skeletal fragility<br>
 	<strong>inhibits:</strong>    osteoclast apoptosis, osteoprotegerin opg expression, osteoblast lifespan and collagen synthesis<br>
 	<strong>inhibited by:</strong> hormone replacement therapy, selective estrogen receptor modulators, raloxifene<br>
@@ -235,8 +214,8 @@ Domain definition<br>
 <br>
    - osteocyte dysfunction<br>
 	<strong>description:</strong>  Osteocytes embedded within the lacunocanalicular network sense mechanical loading and orchestrate targeted bone remodeling. In osteoporotic states—exacerbated by aging, oxidative stress, and chronic inflammation—osteocytes undergo cellular senescence, apoptosis, or functional decoupling. This dysfunction impairs their ability to sense microdamage and transmit survival or directional signals, leading to dysregulated osteoclast recruitment and defective bone repair.<br>
-	<strong>consumes:</strong>    mechanical strain signals, oxygen radicals oxidative stress, gap junction communication channels, viable osteocyte networks<br>
-	<strong>produces:</strong>    elevated apoptotic signals caspases, rankl hotspots at remodeling sites, senescence associated secretory phenotype sasp<br>
+	<strong>consumes:</strong>    mechanical strain signals, oxygen radicals oxidative stress, gap junction communication channels, osteocyte networks<br>
+	<strong>produces:</strong>    elevated apoptotic signals caspases, rankl hotspots at remodeling sites, senescence associated secretory phenotype<br>
 	<strong><strong>explains:</strong></strong>    accumulation of microcracks in aged bone, uncoupled bone remodeling units, focal bone matrix deterioration, age related skeletal fragility<br>
 	<strong>inhibits:</strong>    mechanically induced bone formation, gap junction intercellular communication, osteoblast recruitment to remodeling sites<br>
 	<strong>inhibited by:</strong> antioxidant dietary therapy, senolytics dasatinib quercetin, regular weight bearing exercise, parathyroid hormone pth anabolic regimens<br>
@@ -280,8 +259,8 @@ Domain definition<br>
 <br>
    - wnt beta catenin signaling suppression<br>
 	<strong>description:</strong>  Canonical Wnt/beta-catenin signaling promotes bone formation via osteoblast activation. Upregulated antagonists like sclerostin (SOST) and Dkk-1 block LRP5/6 receptors, suppressing beta-catenin accumulation and blunting osteoblast-mediated bone synthesis in osteoporosis.<br>
-	<strong>consumes:</strong>    canonical wnt ligands, cytosolic beta catenin, lrp5 6 receptors, atp<br>
-	<strong>produces:</strong>    suppressed osteogenic transcription, ubiquitinated beta catenin degradation complexes, reduced osteoid production<br>
+	<strong>consumes:</strong>    canonical wnt ligands, cytosolic beta catenin, lrp5 6 receptors, osteoid production, atp<br>
+	<strong>produces:</strong>    suppressed osteogenic transcription, ubiquitinated beta catenin degradation complexes<br>
 	<strong><strong>explains:</strong></strong>    impaired bone formation capacity, diminished osteoblastogenesis, age related trabecular mass reduction, blunted anabolic response to loading<br>
 	<strong>inhibits:</strong>    osteoblast differentiation, bone matrix mineralization, runx2 dependent gene transcription<br>
 	<strong>inhibited by:</strong> romosozumab, dkk1 neutralizing antibodies, gsk3 beta inhibitors, mechanical loading stimulation<br>
@@ -289,267 +268,204 @@ Domain definition<br>
 <br>
 <strong>Interventions:</strong><br>
 - antioxidant dietary therapy<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> green tea extract, vitamin E, vitamin C<br>
 <br>
 <br>
 - antiresorptive therapy<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> zoledronic acid, alendronate, denosumab<br>
 <br>
 <br>
 - bisphosphonate therapy<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> zoledronic acid, ibandronate, risedronate, alendronate<br>
 <br>
 <br>
 - calcitonin<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> zoledronic acid, calcium and vitamin D supplementation, denosumab, alendronate<br>
 <br>
 <br>
 - calcium and vitamin D supplementation<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> calcium citrate, calcium carbonate, vitamin D3<br>
 <br>
 <br>
 - denosumab<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> zoledronic acid, calcium and vitamin D supplementation, teriparatide therapy, alendronate<br>
 <br>
 <br>
 - dkk1 neutralizing antibodies<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> BHQ880, IDs 03<br>
 <br>
 <br>
 - estrogen receptor agonism<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> bazedoxifene conjugated estrogens, raloxifene hydrochloride<br>
 <br>
 <br>
 - estrogen therapy<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> transdermal estradiol patch, calcium and vitamin D supplementation, progesterone<br>
 <br>
 <br>
 - glycemic control<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> calcium and vitamin D supplementation, GLP 1 receptor agonists, SGLT2 inhibitors, metformin<br>
 <br>
 <br>
 - gsk3 beta inhibitors<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> SB 216763, tideglusib<br>
 <br>
 <br>
 - hormone replacement therapy<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> conjugated equine etrogens with medroxyprogesterone acetate, conjugated equine etrogens, 17-Beta Estradiol<br>
 <br>
 <br>
 - mechanical loading stimulation<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> physical therapy supervision  rehabilitation, transdermal estradiol patch, calcium and vitamin D supplementation, alendronate<br>
 <br>
 <br>
 - multinucleated resorbing cells<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> zoledronic acid, denosumab, alendronate<br>
 <br>
 <br>
 - parathyroid hormone pth anabolic regimens<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> abaloparatide, teriparatide<br>
 <br>
 <br>
 - raloxifene<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> raloxifene hydrochloride<br>
 <br>
 <br>
 - recombinant osteoprotegerin<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> recombinant human osteoprotegerin<br>
 <br>
 <br>
 - reduction of oxidative stressors<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> resveratrol, vitamin E, vitamin C<br>
 <br>
 <br>
 - regular weight bearing exercise<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> physical therapy supervision  rehabilitation, transdermal estradiol patch, calcium and vitamin D supplementation, alendronate<br>
 <br>
 <br>
 - romosozumab<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> romosozumab<br>
 <br>
 <br>
 - selective estrogen receptor modulators<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> bazedoxifene conjugated estrogens, raloxifene hydrochloride<br>
 <br>
 <br>
 - senolytics dasatinib quercetin<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> fisetin augmented senolytic protocol, dasatinib quercetin combination regimen<br>
 <br>
 <br>
 - strontium ranelate modulation<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> strontium ranelate<br>
 <br>
 <br>
 - teriparatide pth analog intermittent<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> zoledronic acid, calcium and vitamin D supplementation, teriparatide therapy, alendronate<br>
 <br>
 <br>
 - teriparatide therapy<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> zoledronic acid, calcium and vitamin D supplementation, teriparatide therapy, alendronate<br>
 <br>
 <br>
 - tgf beta signaling<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> TGF beta receptor type I kinase inhibitor, rh TGF beta1<br>
 <br>
 <br>
 - wnt signaling activators<br>
- <strong>enhances:</strong>      none<br>
- <strong>inhibits:</strong>      none<br>
- <strong>reduces:</strong>       none<br>
- <strong>increases risk of: </strong> none<br>
+ <strong>effects:</strong>          none<br>
  <strong><strong>indicated agents: </strong> </strong> calcium and vitamin D supplementation, denosumab, alendronate, romosozumab<br>
 <br>
 <br>
 <strong>Signals:</strong><br>
+  - abnormal osteoid maturation<br>
+  - accelerated osteoclast differentiation<br>
   - accumulation of non enzymatic glycation end products ages<br>
   - activated osteoclasts<br>
-  - active rankl<br>
+  - active RANKL<br>
+  - alkaline phosphatase activity<br>
   - amino acids<br>
   - anabolic peptides<br>
   - antiresorptive peptides<br>
   - apoptotic osteoblast bodies<br>
   - ascorbic acid vitamin c<br>
   - basic multicellular units<br>
+  - bioavailable calcium ions<br>
+  - bone brittleness<br>
   - bone degradation products ctx ntx<br>
   - bone marrow cavity space<br>
   - brittle protein scaffolding<br>
   - calcium and phosphate into bloodstream<br>
   - calcium ions from bone<br>
   - compact cortical bone thickness<br>
+  - cortical porosity<br>
   - cortical porosity expansion<br>
   - cortical shell<br>
   - cytosolic beta catenin<br>
   - disconnected trabecular network<br>
+  - downregulated osteogenic gene expression<br>
   - elasticity of organic matrix<br>
   - endosteal and periosteal integrity<br>
   - endosteal resorption<br>
   - energy atp<br>
   - enlarged cortical pores<br>
+  - gap junction communication channels<br>
+  - hydroxyapatite deposition<br>
   - hypocellular bone surfaces<br>
   - inorganic phosphate<br>
   - intact trabecular struts and plates<br>
   - load bearing topology<br>
+  - local calcium phosphate imbalance<br>
+  - lrp5 6 frizzled receptor complexes<br>
   - mature enzymatic collagen cross links<br>
   - mature osteoblast secretory products<br>
   - mechanical strain signals<br>
   - microcracks in matrix<br>
   - microscopic trabecular perforations<br>
   - mineralized bone matrix<br>
+  - nuclear estrogen receptors alpha beta<br>
   - osteoblast progenitor cells<br>
-  - osteoid production<br>
+  - osteocyte networks<br>
   - osteoid production<br>
   - osteoprogenitor pools<br>
   - periosteal expansion<br>
   - phosphate ions<br>
   - pro inflammatory cytokines il1 il6 tnfa<br>
+  - RANKL secretion<br>
   - resorption lacunae howships lacunae<br>
+  - resorption pits exceeding formation volume<br>
   - senescence associated secretory phenotype<br>
   - structural cross linking proteins<br>
+  - suppressed osteogenic transcription<br>
   - trabecular microarchitecture deterioration<br>
+  - trabecular perforations<br>
+  - transcriptional coregulators<br>
+  - ubiquitinated beta catenin degradation complexes<br>
 <br>
 <strong>Regimens:</strong><br>
    - bone forming anabolic therapy<br>

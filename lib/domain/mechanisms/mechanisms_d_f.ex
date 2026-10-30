@@ -14,7 +14,7 @@ defmodule Osteoporosis.Domain.Mechanisms.MechanismsDF do
          :transcriptional_coregulators
        ]
        produces [
-         :unsuppressed_rankl_secretion,
+         :rankl_secretion,
          :pro_inflammatory_cytokines_il1_il6_tnfa,
          :accelerated_osteoclast_differentiation
        ]

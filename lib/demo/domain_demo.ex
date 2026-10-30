@@ -69,29 +69,29 @@ defp run_new_fn_queries(pathway) do
 	g = %{g | facts: filtered_facts ++ derived_facts}
 	[
 	  %{
-			question: "In my model, how many Conditions, Mechanisms,  Signals, Regimens,Interventions, and Indicated Agents are there?",
+			question: "In my Osteoporosis model, how many Conditions, Mechanisms,  Signals, Regimens,Interventions, and Indicated Agents are there?",
 			answer: "#{length(p.conditions)} Conditions, #{length(p.mechanisms)} Mechanisms, #{length(p.signals)} Signals, #{length(p.regimens)} Regimens, #{length(p.interventions)}  Interventions, and #{length(indicated_agents)} Indicated Agents"
 	   },
 	   %{
 			 question: "How many Facts does that add up to?",
 			 answer: "#{length(g.facts)} Facts"
 		},
-		%{
-			 question: "How many relationships do you track?",
-			 answer: " I track the these relationship types:
- #{g.facts
-													|> Enum.map(& &1.relation) 
-													|> Enum.frequencies() 
-													|> Enum.map(fn {k, v} -> "#{k}: #{v}" end) 
-													|> Enum.join("
-")} relationships"
-		},
-		%{
-			 question: "What kind of signals do you follow that I can track?",
-			 answer: " I follow the these signals:
- #{p.signals |> Enum.frequencies_by(& &1.signal_type) |> Enum.to_list() |> Enum.sort_by(fn {_signal_type, count} -> count end, :desc) |> Enum.map_join("
-", fn {type, count} -> "#{type}: #{count}" end)}"
-		},
+# 		%{
+# 			 question: "How many relationships do you track?",
+# 			 answer: " I track the these relationship types:
+#  #{g.facts
+# 													|> Enum.map(& &1.relation) 
+# 													|> Enum.frequencies() 
+# 													|> Enum.map(fn {k, v} -> "#{k}: #{v}" end) 
+# 													|> Enum.join("
+# ")} relationships"
+# 		},
+# 		%{
+# 			 question: "What kind of signals do you follow that I can track?",
+# 			 answer: " I follow the these signals:
+#  #{p.signals |> Enum.frequencies_by(& &1.signal_type) |> Enum.to_list() |> Enum.sort_by(fn {_signal_type, count} -> count end, :desc) |> Enum.map_join("
+# ", fn {type, count} -> "#{type}: #{count}" end)}"
+# 		},
 	   %{
 			 question: "I keep a strict diet, and watch my Vitamin D. What symptoms can this diet help?",
 			 answer: subjects_that(g, :inhibited_by, :calcium_and_vitamin_D_supplementation )  |> Enum.map(fn fact -> fact.subject end) |> Enum.uniq() |> Enum.sort()
@@ -110,7 +110,11 @@ defp run_new_fn_queries(pathway) do
 								   |> Enum.map(fn fact -> fact.subject end) |> Enum.uniq() |> Enum.sort()
 		},
 		%{
-			 question: "Wow - that's a lot.  Suppose I just stick to Vitamin D and Calcium - what does that help?",
+			question: "I've never heard of 'impaired osteoblastogenesis' - can you describe it to me?",
+			answer: describe(p, :impaired_osteoblastogenesis)
+		  },
+		%{
+			 question: "Suppose I just stick to Vitamin D and Calcium - what does that help?",
 			 #answer: interventions_that(p, :effects, :dietary_sodium_reduction, when: :increased )
 			 # answer:  Enum.find(p.interventions, fn intervention -> intervention.name == :calcium_and_vitamin_D_supplementation end).effects
 				# 	  |> Enum.filter(fn {_key, value} -> value == [when: :increased, direction: :decreased] end)

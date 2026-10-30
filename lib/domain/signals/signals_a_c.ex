@@ -4,6 +4,34 @@ defmodule Osteoporosis.Domain.Signals.SignalsAC do
   defmacro signals_a_c do
   quote do
 
+        
+		signal :abnormal_osteoid_maturation do
+			description "Abnormal osteoid maturation is characterized by normal mineralization of the bone matrix but a reduced amount of bone tissue. Osteoid maturation (the process of mineralization) is normal in osteoporosis. The abnormality lies in impaired bone formation and increased bone resorption, leading to low bone mass."
+			
+			signal_type :process_outcome
+			
+			indicates [
+				bone_formation: [ when: :increased, direction: :decreased ],        # valine, leucine, tyrosine, and tryptophan
+				bone_resorption: [ when: :increased, direction: :increased],
+				bone_mass: [ when: :increased, direction: :decreased]    # glycine, citrulline, and homocysteine
+				]
+		end
+		
+		
+		signal :accelerated_osteoclast_differentiation do
+			description "Accelerated osteoclast differentiation in osteoporosis is a pathological process where osteoclast precursors rapidly mature into bone-resorbing cells, leading to net bone loss and decreased bone mass. This process is primarily driven by RANKL (Receptor Activator of Nuclear Factor-κB Ligand) signaling, which binds to the RANK receptor on osteoclast precursors.  This interaction triggers a cascade of intracellular signals, including NF-κB, MAPK (such as p38 and JNK), and calcium/NFATc1 pathways, which activate transcription factors essential for osteoclast maturation and function."
+			
+			signal_type :process_outcome
+			
+			indicates [       # valine, leucine, tyrosine, and tryptophan
+				bone_resorption: [ when: :increased, direction: :increased],
+				bone_formation:  [ when: :increased, direction: :decreased],
+				bone_mass:       [ when: :increased, direction: :decreased]  ,
+				bone_loss:       [ when: :increased, direction: :increased]   # glycine, citrulline, and homocysteine
+				]
+		end
+
+
 		signal :accumulation_of_non_enzymatic_glycation_end_products_ages do
 			description "Accumulation of non-enzymatic glycation end products (AGEs) in osteoporosis is a critical pathogenic factor that significantly impairs bone quality and increases fracture risk, often independent of bone mineral density (BMD).  The accumulation of AGEs indicates and contributes to bone fragility through several mechanisms."
 			
@@ -31,7 +59,7 @@ defmodule Osteoporosis.Domain.Signals.SignalsAC do
 			end
 			
 			
-			signal :active_rankl do
+			signal :active_RANKL do
 			description "Active RANKL is a cytokine ligand belonging to the tumor necrosis factor (TNF) superfamily that acts as a positive signal for bone resorption.  It indicates an imbalance in bone remodeling where the ratio of RANKL to its decoy receptor, OPG, is elevated, leading to excessive osteoclast differentiation, activation, and survival. "
 			
 			signal_type :molecule
@@ -39,6 +67,19 @@ defmodule Osteoporosis.Domain.Signals.SignalsAC do
 			indicates [
 				bone_resorption: [ when: :increased, direction: :increased ],        # valine, leucine, tyrosine, and tryptophan
 				bone_loss: [ when: :increased, direction: :increased ]   # glycine, citrulline, and homocysteine
+				]
+			end
+			
+			
+			signal :alkaline_phosphatase_activity do
+			description "alkaline phosphatase (ALP) activity typically remains within the normal range, as the condition is defined by low bone mass rather than defects in mineralization.  However, elevated ALP levels serve as a critical signal for increased bone turnover and accelerated remodeling, which often reflects a compensatory response to declining bone density or indicates high-turnover osteoporosis."
+			
+			signal_type :process_state
+			
+			indicates [
+				bone_turnover:       [ when: :increased, direction: :increased ],      
+				bone_remodeling:     [ when: :increased, direction: :increased ], 
+				fracture_risk:       [ when: :increased, direction: :increased ]  
 				]
 			end
 			
@@ -117,6 +158,26 @@ defmodule Osteoporosis.Domain.Signals.SignalsAC do
 			end
 			
 			
+			signal :bioavailable_calcium_ions do
+			description "Bioavailable calcium ions refer to ionized calcium (Ca²⁺), which constitutes the biologically active, unbound fraction of calcium in the blood, distinct from protein-bound calcium.  These ions serve as ubiquitous second messengers in bone physiology, acting as digital signals that trigger intracellular pathways essential for bone remodeling. "
+			
+			signal_type :molecule
+			
+			indicates [
+				bone_resorption:   [ when: :decreased, direction: :increased ]
+				]
+			end
+			
+			signal :bone_brittleness do
+			description "Bone brittleness in osteoporosis is the physical result of porous, weakened bones caused by the bone tissue breaking down faster than it is replaced.  It is not a direct sensation or symptom felt by the patient, but rather a structural signal of significantly low bone density and deteriorated microarchitecture."
+			
+			signal_type :process_state
+			
+			indicates [
+				fracture_risk:   [ when: :increased, direction: :increased ],
+				bone_fragility:  [ when: :increased, direction: :increased]
+				]
+			end
 			
 			
 			signal :bone_degradation_products_ctx_ntx do
@@ -196,21 +257,35 @@ defmodule Osteoporosis.Domain.Signals.SignalsAC do
 			end
 			
 			
+		    signal :cortical_porosity do
+				description "Cortical porosity is a micro-architectural measure of the volume fraction of pores (void spaces filled with fluid, primarily water) within the dense cortical bone shell. It is not a traditional imaging signal but a quantitative biomarker derived from advanced imaging techniques such as high-resolution peripheral quantitative computed tomography (HR-pQCT), ultrashort echo time (UTE) MRI, or quantitative acoustics, which detect the increased void volume and associated pore water or free water signals."
+				
+				signal_type :process_state
+				
+				indicates [
+					bone_fragility:      [ when: :increased, direction: :increased],
+					bone_strength:       [ when: :increased, direction: :decreased ],
+					bone_resorption:     [ when: :increased, direction: :increased],
+					fracture_risk:       [ when: :increased, direction: :increased]
+			    ]
+			end
+			
+			
 			signal :cortical_porosity_expansion do
-			description "The widening and deepening of Haversian and Volkmann canals within the dense outer cortical bone shell, transforming compact bone into a more porous, sponge-like structure."
+				description "The widening and deepening of Haversian and Volkmann canals within the dense outer cortical bone shell, transforming compact bone into a more porous, sponge-like structure."
+				
+				signal_type :process_state
+				
 			
-			signal_type :process_state
+				indicates [
+					enlarged_cortical_pores:  [ when: :increased, direction: :increased],
+					endosteal_resorption:     [ when: :increased, direction: :increased],
+					susceptibility_to_long_bone_fractures_hip_and_wrist:  [ when: :increased, direction: :increased],
+					diminished_torsional_and_bending_rigidity:  [ when: :increased, direction: :increased],
+					cortical_fragility:  [ when: :increased, direction: :increased],
+					risk_of_hip_fracture_under_side_impact:  [ when: :increased, direction: :increased]
+				]
 			
-		
-			indicates [
-				enlarged_cortical_pores:  [ when: :increased, direction: :increased],
-				endosteal_resorption:     [ when: :increased, direction: :increased],
-				susceptibility_to_long_bone_fractures_hip_and_wrist:  [ when: :increased, direction: :increased],
-				diminished_torsional_and_bending_rigidity:  [ when: :increased, direction: :increased],
-				cortical_fragility:  [ when: :increased, direction: :increased],
-				risk_of_hip_fracture_under_side_impact:  [ when: :increased, direction: :increased]
-			]
-		
 			end
 			
 			

@@ -17,6 +17,21 @@ defmodule Osteoporosis.Domain.Signals.SignalsDF do
 		  end
 		  
 		  
+		  signal :downregulated_osteogenic_gene_expression do
+			  description "Downregulated osteogenic gene expression involves the reduced levels of key markers such as Runx2, osteocalcin (BGLAP), osteopontin, BMP6, and FOXQ1. This represents a transcriptional and molecular signaling shift toward bone inertness, often driven by imbalances in pathways like Wnt/β-catenin and STAT3, and associated with the upregulation of inhibitory factors like miR-23b."
+			  
+			  signal_type :process_state
+			
+			  indicates [
+				osteoblast_differentiation:  [ when: :increased, direction: :decreased ],
+				osteoblast_activity:         [ when: :increased, direction: :decreased ],
+				bone_mineral_density:        [ when: :increased, direction: :decreased],
+				bone_fragility:              [ when: :increased, direction: :increased],
+				bone_fractures_risk:         [ when: :increased, direction: :increased]
+				]
+			end
+			
+		  
 		  
 		  signal :endosteal_and_periosteal_integrity do
 			description "Endosteal and periosteal integrity refers to the structural and functional condition of the endosteum (lining the inner bone cavities) and the periosteum (covering the outer bone surface), which together regulate bone remodeling, cortical thickness, and overall skeletal strength."
