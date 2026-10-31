@@ -31,17 +31,17 @@
 		Conditions:
 		#{render_conditions(demo.conditions)}
 		
-		Mechanisms:
-		#{render_mechanisms(demo.mechanisms)}
-		
-		Regimens:
+		Treatment Regimens:
 		#{render_regimens(demo.regimens)}
 		
 		Interventions:
 		#{render_interventions(demo.interventions)}
 		
-		Indicated Agents:
+		Treatments:
 		#{render_indicated_agents(demo.indicated_agents)}
+		
+		Mechanisms:
+		#{render_mechanisms(demo.mechanisms)}
 	
 		Signals:
 		#{render_items(demo.signals)}

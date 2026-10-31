@@ -15,7 +15,7 @@ defmodule Osteoporosis.Demo.HtmlRenderer do
 	<html>
 	  <head>
 		<meta charset="utf-8">
-		<title>Osteoporosis Demo</title>
+		<title>Osteoporosis Overview</title>
 		<style>
 		  body {
 			font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -36,7 +36,7 @@ defmodule Osteoporosis.Demo.HtmlRenderer do
 		</style>
 	  </head>
 	  <body>
-		<h1>Osteoporosis Demo</h1>
+		<h1>Osteoporosis Overview</h1>
 		<p>
 		  Toward solving problems in the domains where we find them,
 		  and in the language of that domain.
@@ -55,9 +55,11 @@ defmodule Osteoporosis.Demo.HtmlRenderer do
   defp bold_keywords(body) do
 	body
 	|> String.replace("description:", "<strong>description:</strong>")
+	|> String.replace("Domain definition", "<strong>Domain definition</strong>")
 	|> String.replace("Signals:", "<strong>Signals:</strong>")
 	|> String.replace("Mechanisms:", "<strong>Mechanisms:</strong>")
 	|> String.replace("Interventions:", "<strong>Interventions:</strong>")
+	|> String.replace("Treatment Regimens:", "<strong>Treatment Regimens:</strong>")
 	|> String.replace("Regimens:", "<strong>Regimens:</strong>")
 	|> String.replace("Conditions:", "<strong>Conditions:</strong>")
 	|> String.replace("consumes:", "<strong>consumes:</strong>")
@@ -82,6 +84,7 @@ defmodule Osteoporosis.Demo.HtmlRenderer do
 	|> String.replace("mechanisms:", "<strong>mechanisms:</strong>")
 	|> String.replace("signals:", "<strong>signals:</strong>")
 	|> String.replace("typical_dosage:", "<strong>typical dosage:</strong>")
+	|> String.replace("Treatments:", "<strong>Treatments:</strong>")
 	|> String.replace("brand_names:", "<strong>brand_names:</strong>")
 	|> String.replace("interventions:", "<strong>interventions:</strong>")
 	|> String.replace("increases_risk_of:", "<strong>increases risk of: </strong>")

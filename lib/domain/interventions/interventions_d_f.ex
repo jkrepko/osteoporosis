@@ -16,6 +16,7 @@ defmodule Osteoporosis.Domain.Interventions.InterventionsDF do
       
         indicated_agents [
            :alendronate,
+           :denosumab,
            :teriparatide_therapy,
            :calcium_and_vitamin_D_supplementation,
            :zoledronic_acid

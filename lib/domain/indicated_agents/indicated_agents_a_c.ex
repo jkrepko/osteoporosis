@@ -11,20 +11,20 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsAC do
 		  status  :first_line_standard_of_care
 		  typical_dosage "0.5 mg to 1.0 mg daily"
 		  contraindicated_by []
-		  intended_effects [:test_result]
+		  intended_effects [:arrect_bone_loss, :increase_bone_mineral_density, :reduce_fracture_risk]
 		  interventions [:estrogen_therapy, :hormone_replacement_therapy ]
 	  end
 		  
 		  
 	  indicated_agent :abaloparatide do
 		  description "Abaloparatide is a synthetic analog of human parathyroid hormone-related protein (PTHrP[1-34]) that selectively targets the RG conformation of the PTH1 receptor, promoting profound osteoblastic bone formation with minimal bone resorption stimulation."
-		  brand_name :Abaloparatide
+		  brand_name [:Tymlos, :Eladynos]
 		  category :pthrp_analog
 		  status  :standard_of_care
 		  typical_dosage "80 micrograms (mcg) administered subcutaneously once daily in the abdominal region for up to 18 to 24 months total duration."
 		  contraindicated_by [:osteosarcoma, :pediatric_bone_disorders, :hypersensitivity_to_abaloparatide_or_excipients,
 							  :hypercalcemia, :severe_hypercalciuria, :renal_impairment, :hepatic_impairment]
-		  intended_effects []
+		  intended_effects [:reduce_fracture_risk, :increase_bone_mineral_density, :enhance_bone_microarchitecture, :stimulate_osteoblast_activity]
 		  interventions [ :parathyroid_hormone_pth_anabolic_regimens  ]
 	  end
 		  
@@ -37,7 +37,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsAC do
 		  typical_dosage "70 mg orally once weekly"
 		  contraindicated_by [:esophageal_abnormalities, :inability_to_stay_upright_for_30_min, 
 							   :hypocalcemia, :hypersensitivity_to_alendronate]
-		  intended_effects []
+		  intended_effects [:slow_bone_loss, :increase_bone_mineral_density, :reduce_fracture_risk, :preserve_bone_quality, :prevent_height_loss]
 		  interventions [:bisphosphonate_therapy, :denosumab, :teriparatide_pth_analog_intermittent, :wnt_signaling_activators,
 						  :antiresorptive_therapy, :multinucleated_resorbing_cells  ]
 	  end
@@ -50,7 +50,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsAC do
 		  status :first_line_standard_of_care
 		  typical_dosage "0.45 mg conjugated estrogens / 20 mg bazedoxifene daily"
 		  contraindicated_by []
-		  intended_effects []
+		  intended_effects [:prevent_postmenopausal_osteoporosis, :reduce_fracture_risk, :reduce_hot_flashes, :prevent_hyperplasia, :improve_lipid_profile]
 		  interventions [:estrogen_therapy, :selective_estrogen_receptor_modulators, :estrogen_receptor_agonism]
 	  end
 	  
@@ -62,7 +62,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsAC do
 		  typical_dosage "Intravenous infusion or subcutaneous injection at a dosage of 2.5 mg/kg to 10 mg/kg every 4 weeks under specialist endocrinology supervision."
 		  contraindicated_by  [:hypersensitivity_to_active_biologic_substance, :hypersensitivity_or_anaphylaxis_to_monoclonal_antibody_therapies,
 							  :pregnancy, :planned_pregnancy, :lactation, :active_systemic_infection_or_chronic_opportunistic_infections,  :severe_hepatic_dysfunction]
-		  intended_effects []
+		  intended_effects [:increase_osteoblast_differentiation, :increase_bone_strength]
 		  interventions [ :dkk1_neutralizing_antibodies ]	
 	  end
 		  
@@ -74,7 +74,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsAC do
 		  status :first_line_standard_of_care
 		  typical_dosage "Calcium: 1000-1200 mg daily; Vitamin D3: 800-2000 IU daily"
 		  contraindicated_by [:hypercalcemia, :hypercalciuria, :nephrolithiasis, :severe_renal_impairment ]
-		  intended_effects []
+		  intended_effects [:correct_nutritional_deficiencies, :enhance_bone_mineral_density, :reduce_fracture_risk, :reduce_fall_risk]
 		  interventions [:estrogen_therapy, :denosumab, :teriparatide_pth_analog_intermittent, :wnt_signaling_activators ]
 	  end
 	  
@@ -85,7 +85,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsAC do
 		  status :first_line_standard_of_care
 		  typical_dosage "500 mg to 1200 mg elemental calcium daily (divided in doses not exceeding 500-600 mg of elemental calcium at one time, taken with food)"
 		  contraindicated_by [:hypercalcemia, :achlorhydria, :hypercalciuria ]
-		  intended_effects []
+		  intended_effects [:regulate_bone_metabolism, :correct_calcium_balance]
 		  interventions [:estrogen_therapy, :denosumab, :teriparatide_pth_analog_intermittent, :wnt_signaling_activators,
 						  :adequate_vitamin_d_and_calcium_status ]
 	  end
@@ -97,7 +97,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsAC do
 		  status :first_line_standard_of_care
 		  typical_dosage "500 mg to 1000 mg elemental calcium daily, taken with or without food"
 		  contraindicated_by [:hypercalcemia, :severe_renal_impairment, :hypersensitivity_to_calcium_citrate_formulations ]
-		  intended_effects []
+		  intended_effects [:reduce_bone_loss, :reduce_bone_turnover, :reduce_fracture_risk]
 		  interventions [:estrogen_therapy, :denosumab, :teriparatide_pth_analog_intermittent, :wnt_signaling_activators,
 						  :adequate_vitamin_d_and_calcium_status ]
 	  end
@@ -111,7 +111,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsAC do
 		  status :first_line_standard_of_care
 		  typical_dosage "0.3 mg to 0.625 mg daily"
 		  contraindicated_by []
-		  intended_effects []
+		  intended_effects [:prevent_bone_loss, :increase_bone_mineral_density, :reduce_fracture_risk, :suppress_bone_turnover]
 		  interventions [:estrogen_therapy, :hormone_replacement_therapy ]
 	  end
 		  
@@ -124,7 +124,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsAC do
 		  typical_dosage "Continuous combined regimen of CEE 0.625 mg and MPA 2.5 mg to 5 mg taken orally once daily without interruption."
 		  contraindicated_by [:known_or_suspected_pregnancy, :estrogen_dependent_malignancies_history, :thromboembolic_disorders,
 						  :severe_hepatic_impairment, :uterine_bleeding ]
-		  intended_effects []
+		  intended_effects [:prevent_bone_loss, :increase_bone_mineral_density, :reduce_fracture_risk, :suppress_bone_turnover]
 		  interventions [:estrogen_therapy, :hormone_replacement_therapy ]
 	  end
 	  

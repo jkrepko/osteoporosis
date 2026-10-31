@@ -11,7 +11,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsDF do
       status :standard_of_care
       typical_dosage "60 mg administered subcutaneously once every 6 months"
       contraindicated_by [:pregnancy, :hypocalcemia, :hypersensitivity_to_denosumab ]
-      intended_effects []
+      intended_effects [:inhibit_bone_resorption, :increase_bone_mineral_density, :reduce_fracture_risk, :improve_bone_quality]
       interventions [:bisphosphonate_therapy, :denosumab, :teriparatide_pth_analog_intermittent, :wnt_signaling_activators,
               :antiresorptive_therapy, :multinucleated_resorbing_cells ]
     end
@@ -26,7 +26,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsDF do
       typical_dosage "Oral dasatinib (100 mg) combined with quercetin (1000 mg) administered as a single dose on consecutive days once every 2 weeks or monthly."
       contraindicated_by [:history_of_significant_cardiac_arrhythmias, :severe_hepatic_impairment, 
                            :severe_renal_impairment, :use_of_strong_CYP3A4_inhibitors_or_inducers ]
-      intended_effects []
+      intended_effects [:reduce_senescent_cell_burden, :enhance_bone_formation, :restore_bone_density ]
       interventions [ :senolytics_dasatinib_quercetin ]
     end
       
@@ -38,7 +38,8 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsDF do
       status :first_line_standard_of_care
       typical_dosage "1 actuation daily (varying by specific product concentration)"
       contraindicated_by []
-      intended_effects []
+      intended_effects [:slow_bone_resorption, :reduce_fracture_risk, :prevent_bone_loss,
+                        :maintain_bone_microarchitecture]
       interventions [:estrogen_therapy]
     end
       
@@ -52,7 +53,8 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsDF do
       contraindicated_by [:allergy_to_flavonoids_or_plant_derived_polyphenols, :active_bleeding_disorders, 
                 :severe_gastrointestinal_intolerance, :active_inflammatory_bowel_disease,
                 :active_chemotherapy_or_immunosuppressive_therapy]
-      intended_effects []
+      intended_effects [:enhance_osteoblast_activity, :reduce_frailty, 
+                        :reduce_senescent_cell_burden, :reduce_oxidative_stress]
       interventions [ :senolytics_dasatinib_quercetin ]
     end
 	  

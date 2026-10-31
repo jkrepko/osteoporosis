@@ -11,7 +11,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsMP do
       status :first_line_standard_of_care
       typical_dosage "500 mg to 2000 mg daily, typically initiated at 500 mg once or twice daily with meals and titrated gradually to minimize gastrointestinal side effects"
       contraindicated_by [:low_eGFR, :acute_metabolic_acidosis, :chronic_metabolic_acidosis,  :hepatic_disease, :tissue_hypoxia ]
-      intended_effects []
+      intended_effects [:promote_osteoblast_activity, :inhibit_osteoclast_activity, :mitigate_metabolic_damage]
       interventions [:denosumab, :teriparatide_pth_analog_intermittent, :glycemic_control ]	
     end
         
@@ -23,7 +23,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsMP do
       status :standard_of_care
       typical_dosage "1-3 sessions per week initially for form mastery, transitioning to independent home programs with periodic clinical reassessment"
       contraindicated_by [:traumatic_spinal_instability, :patient_refusal ]
-      intended_effects []
+      intended_effects [:reduce_fall_risk,:correct_posture, :build_muscle_strength]
       interventions [:estrogen_therapy]
     end
     
@@ -36,7 +36,8 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsMP do
       typical_dosage "200 mg orally daily for 12 days per month (sequential) or 100 mg orally daily (continuous combined)"
       contraindicated_by [:breast_cancer, :uterine_bleeding, :liver_disease,
                 :hypersensitivity_to_progesterone ]
-      intended_effects []
+      intended_effects [:stimulate_osteoblasts, :increase_bone_density, :prevent_bone_loss,   
+                        :restore_bome_mass]
       interventions [:estrogen_therapy]
     end
 	  
