@@ -28,21 +28,24 @@
 		Domain definition
 		-----------------
 	
+		Conditions:
+		#{render_conditions(demo.conditions)}
+		
 		Mechanisms:
 		#{render_mechanisms(demo.mechanisms)}
 		
+		Regimens:
+		#{render_regimens(demo.regimens)}
+		
 		Interventions:
 		#{render_interventions(demo.interventions)}
+		
+		Indicated Agents:
+		#{render_indicated_agents(demo.indicated_agents)}
 	
 		Signals:
 		#{render_items(demo.signals)}
-	
-		Regimens:
-		#{render_regimens(demo.regimens)}
-	
-		Conditions:
-		#{render_conditions(demo.conditions)}
-	
+
 	
 		"""
 	  end
@@ -109,12 +112,10 @@
 		defp render_condition(m) do
 		  """
 		  - #{english_name(OsteoporosisDemo.get(m, :name, :unnamed_condition))}
-			  effects:    #{english_list(OsteoporosisDemo.get(m, :effects, []))}
+		      description:  #{OsteoporosisDemo.get(m, :description, :none_given)}
 			  mechanisms:    #{english_list(OsteoporosisDemo.get(m, :mechanisms, []))}
-			  explains:    #{english_list(OsteoporosisDemo.get(m, :explains, []))}
 			  signals: #{english_list(OsteoporosisDemo.get(m, :signals, []))}
 			  interventions: #{english_list(OsteoporosisDemo.get(m, :interventions, []))}
-			  confidence:  #{OsteoporosisDemo.get(m, :confidence, :unknown)}
 		  """
 		end
 	
@@ -136,10 +137,37 @@
 	defp render_intervention(m) do
 	  """
 	  - #{english_name(OsteoporosisDemo.get(m, :name, :unnamed_intervention))}
-		  effects:          #{english_list(OsteoporosisDemo.get(m, :effects, []))}
+	      description:  #{OsteoporosisDemo.get(m, :description, :none_given)}
 		  indicated_agents: #{english_list(OsteoporosisDemo.get(m, :indicated_agents, []))}
 	  """
+	  # effects:          #{english_list(OsteoporosisDemo.get(m, :effects, []))}
 	end
+	
+	defp render_indicated_agents([]), do: "  none yet"
+	
+	defp render_indicated_agents(indicated_agents) do
+	  indicated_agents
+	  |> Enum.sort_by(fn indicated_agent ->
+		indicated_agent
+		|> OsteoporosisDemo.get(:name, :unnamed_indicated_agent)
+		|> english_name()
+		|> String.downcase()
+	  end)
+	  |> Enum.map(&render_indicated_agent/1)
+	  |> Enum.join("\n\n")
+	end
+	
+	defp render_indicated_agent(m) do
+	  """
+	  - #{english_name(OsteoporosisDemo.get(m, :name, :unnamed_indicated_agent))}
+	      brand_names:              #{english_list(OsteoporosisDemo.get(m, :brand_name, []))}
+		  intended_effects:         #{english_list(OsteoporosisDemo.get(m, :intended_effects, []))}
+		  typical_dosage:           #{english_list(OsteoporosisDemo.get(m, :typical_dosage, []))}
+		  contraindicated_by:       #{english_list(OsteoporosisDemo.get(m, :contraindicated_by, []))}
+		  part_of_interventions:            #{english_list(OsteoporosisDemo.get(m, :interventions, []))}
+	  """
+	end
+	
 	
 	  defp render_regimens([]), do: "  none yet"
 	
@@ -152,9 +180,12 @@
 	  defp render_regimen(m) do
 		"""
 		   - #{english_name(OsteoporosisDemo.get(m, :name, :unnamed_regimen))}
-			interventions:    #{english_list(OsteoporosisDemo.get(m, :interventions, []))}
-			risks:      #{english_list(OsteoporosisDemo.get(m, :risks, []))}
+			description:  #{OsteoporosisDemo.get(m, :description, :none_given)}
+			interventions:       #{english_list(OsteoporosisDemo.get(m, :interventions, []))}
+			intended_effects:    #{english_list(OsteoporosisDemo.get(m, :intended_effects, []))}
+			risks:               #{english_list(OsteoporosisDemo.get(m, :risks, []))}
 		"""
+		#  #{english_name(OsteoporosisDemo.get(m, :description, :unnamed_description))}
 	  end
 	
 	  defp render_queries(queries) do

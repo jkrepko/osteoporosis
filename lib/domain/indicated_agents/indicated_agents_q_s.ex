@@ -12,7 +12,8 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsQS do
       typical_dosage "60 milligrams (mg) taken orally once daily, with or without food, accompanied by adequate calcium and vitamin D supplementation."
       contraindicated_by [:venous_thromboembolism, :pregnancy, :lactation, :severe_hepatic_impairment, :cholestasis,
                 :uterine_bleeding, :severe_hepatic_impairment, :prolonged_immobilization ]
-      intended_effects []
+      intended_effects [:increase_bone_mineral_density, :reduce_bone_resorption, :reduce_fracture_risk, 
+                        :improve_lipid_profile, :reduce_breast_cancer]
       interventions [:estrogen_therapy, :estrogen_receptor_agonism, :raloxifene, :selective_estrogen_receptor_modulators ]
     end
       
@@ -25,7 +26,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsQS do
       typical_dosage "Parenteral administration (subcutaneous injection) ranging from 0.1 mg/kg to 3.0 mg/kg administered at multi-week intervals in clinical trial settings."
       contraindicated_by [:uncorrected_hypocalcemia, :severe_infection, :sepsis, :development_of_neutralizing_anti_OPG_antibodies,
                 :hypersensitivity_to_human_immunoglobulin_Fc_fusion_proteins ]
-      intended_effects []
+      intended_effects [:inhibit_osteoclast_activity, :suppress_bone_resorption, :increase_bone_mass, :reverse_bone_loss]
       interventions [:recombinant_osteoprotegerin]
     end
     
@@ -36,7 +37,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsQS do
       status :standard_of_care
       typical_dosage "150 mg to 500 mg orally once daily with food"
       contraindicated_by [:active_bleeding_disprders, :hormone_sensitive_malignancies, :hypersensitivity_to_resveratrol ]
-      intended_effects []
+      intended_effects [:increase_bone_mass, :increase_bone_density, :inhibit_bone_resorption, :reduce_oxidative_stress]
       interventions [:reduction_of_oxidative_stressors]
     end
     
@@ -48,7 +49,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsQS do
       typical_dosage "Targeted local or systemic administration ranging from 0.05 mg/kg to 1.0 mg/kg via specialized delivery protocols under clinical evaluation."
       contraindicated_by [:active_local_or_systemic_neoplasia, :pregnancy, :lactation, :severe_inflammation_at_the_administration_site,
                 :hypersensitivity_to_recombinant_human_growth_factors]
-      intended_effects []
+      intended_effects [:stimulate_osteoblasts, :prevent_bone_loss, :inhibit_resorption]
       interventions [:tgf_beta_signaling]
     end
     
@@ -61,7 +62,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsQS do
       typical_dosage "35 mg orally once weekly or 150 mg orally once a month"
       contraindicated_by [:severe_renal_impairment, :inability_to_stay_upright_for_30_min, 
                 :hypocalcemia, :hypersensitivity_to_risedronate]
-      intended_effects []
+      intended_effects [:slow_bone_resorption, :increase_bone_mineral_density, :reduce_fracture_risk, :maintain_bone_quality]
       interventions [:bisphosphonate_therapy]
     end
       
@@ -74,7 +75,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsQS do
       status :standard_of_care
       typical_dosage "210 mg total dose administered subcutaneously once monthly (given as two 105 mg injections in the abdomen, thigh, or upper arm) for a maximum duration of 12 monthly doses, followed by an antiresorptive therapy."
       contraindicated_by [:myocardial_infarction, :hypocalcemia, :hypersensitivity_to_romosozumab_aqqg]
-      intended_effects []
+      intended_effects [:increase_bone_mineral_density, :reduce_fracture_risk, :improve_bone_microarchitecture]
       interventions [:reduction_of_oxidative_stressors, :romosozumab, :wnt_signaling_activators]
     end
       
@@ -88,7 +89,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsQS do
       contraindicated_by [:history_of_severe_drug_induced_liver_injury, 
                 :use_of_strong_inducers_or_inhibitors_of_CYP450_enzymes_metabolizing_the_compound,
                 :active_malignancies, :active_proliferative_bone_disorders ]
-      intended_effects []
+      intended_effects [:promote_osteogenesis, :inhibit_adipogenesis, :inhibit_osteoclastogenesis]
       interventions [:gsk3_beta_inhibitors]
     end
       
@@ -101,7 +102,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsQS do
       typical_dosage "10 mg orally once daily (empagliflozin) or 10 mg orally once daily (dapagliflozin), taken in the morning with or without food"
       contraindicated_by [:low_eGFR, :severe_renal_impairment, :end_stage_renal_disease,  
                  :hypersensitivity_to_the_specific_SGLT2_inhibitor]
-      intended_effects []
+      intended_effects [:glycemic_control, :cardiovascular_protection, :renal_benefits]
       interventions [:glycemic_control]	
     end
       
@@ -114,7 +115,7 @@ defmodule Osteoporosis.Domain.IndicatedAgents.IndicatedAgentsQS do
       typical_dosage " g once daily taken orally as a suspension in a glass of water, ideally taken at bedtime separated from food and dairy products to ensure optimal absorption."
       contraindicated_by [:cardiovascular_disease,  :venous_thromboembolic_events, :severe_renal_failure,
                 :uncontrolled_hypertension]
-      intended_effects []
+      intended_effects [:enhance_bone_formation, :reduce_bone_resorption, :improve_bone_quality, :reduce_fracture_risk ]
       interventions [:glycemic_control]	
     end
 	  
